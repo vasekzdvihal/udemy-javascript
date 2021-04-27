@@ -38,6 +38,16 @@ const app = {
             const attackValue = getRandomValue(10 ,25);
             this.monsterHealth -= attackValue;
             this.attackPlayer();
+        },
+        healPlayer() {
+            this.currentRound++;
+            const healValue = getRandomValue(8, 20);
+            if(this.playerHealth + healValue > 100) {
+                this.playerHealth = 100;
+            } else {
+                this.playerHealth += healValue;
+            }
+            this.attackPlayer();
         }
     }
 };
