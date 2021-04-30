@@ -17,6 +17,16 @@ const app = Vue.createApp({
 
 app.mount('#app');
 
+const app2 = Vue.createApp({
+  data() {
+    return {
+      favoriteMeal : "Pizza!"
+    }
+  }
+});
+
+app2.mount("#app2");
+
 // ....
 
 /*let message = "Hello";
@@ -28,6 +38,7 @@ console.log(longMessage);*/
 
 // .....
 
+/*
 const data = {
   message: "Prd stary baby",
   longMessage: ""
@@ -45,4 +56,4 @@ const handler = {
 const proxy = new Proxy(data, handler);
 proxy.message = "Hello!!!";
 console.log(proxy.longMessage);
-console.log(proxy.message);
+console.log(proxy.message);*/
