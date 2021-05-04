@@ -1,3 +1,5 @@
+// WebDevSimplified https://www.youtube.com/watch?v=DHvZLI7Db8E&t=614s
+console.log('WebDevSimplified');
 // 1
 let p = new Promise((resolve, reject) => {
     let a = 1 + 1;
@@ -67,3 +69,4 @@ Promise.race([
 ]).then((message) => {
     console.log(message);
 });
+
