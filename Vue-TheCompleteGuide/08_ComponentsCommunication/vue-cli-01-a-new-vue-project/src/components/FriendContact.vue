@@ -3,6 +3,7 @@
     <h2>{{ name }} <span class="favorite" v-if="isFavorite">favorite</span></h2>
     <button @click="toggleDetails">{{ detailsAreVisible ? 'Hide' : 'Show' }} Details</button>
     <button @click="toggleFavorite">Toggle favorite</button>
+    <button @click="$emit('delete', id)">Delete</button>
     <ul v-if="detailsAreVisible">
       <li><strong>Phone:</strong> {{ phoneNumber }}</li>
       <li><strong>Email:</strong> {{ emailAddress }}</li>
@@ -32,19 +33,20 @@
         default: false
       }
     },
-    // emits: [
-    //   'toggle-favorite'
-    // ],
-    emits: {
-      'toggle-favorite' : function(id) {
-        if(id) {
-          return true;
-        } else {
-          console.warn('id is missing');
-          return false;
-        }
-      }
-    },
+    emits: [
+      'toggle-favorite', 'delete'
+    ],
+    // emits: {
+    //   'toggle-favorite' : function(id) {
+    //     if(id) {
+    //       return true;
+    //     } else {
+    //       console.warn('id is missing');
+    //       return false;
+    //     }
+    //   },
+    //   'delete' : function(id) {}
+    // },
     data() {
       return {
         detailsAreVisible : false,
