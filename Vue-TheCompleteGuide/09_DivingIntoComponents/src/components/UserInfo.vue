@@ -13,11 +13,3 @@ export default {
   props: ["fullName", "infoText", "role"],
 };
 </script>
-
-<style scoped>
-section div {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-</style>
