@@ -1,22 +1,15 @@
 <template>
   <the-header title="Remember ME!"></the-header>
-
+  <the-resources></the-resources>
 </template>
 
 <script>
 import TheHeader from "./components/layout/TheHeader";
+import TheResources from "./components/learning-resources/TheResources";
 
 export default {
   components: {
-    TheHeader
-  },
-  data() {
-    return {
-      storedResources : [
-        { id: 'official-guide', title: 'Official Guide', description: 'This is short description', link: 'https://vuejs.org' },
-        { id: 'google', title: 'Google', description: 'Google', link: 'https://google.com' }
-      ]
-    }
+    TheHeader, TheResources
   }
 }
 </script>

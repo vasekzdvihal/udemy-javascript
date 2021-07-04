@@ -8,7 +8,7 @@
 import LearningResource from './LearningResource';
 
 export default {
-  props: ['resources'],
+  inject: ['resources'],
   components: {
     LearningResource
   }
