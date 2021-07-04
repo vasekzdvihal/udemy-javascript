@@ -1,13 +1,15 @@
 <template>
-  <base-dialog v-if="inputIsInvalid" title="Invalid Input" @close="confirmError">
-    <template #default>
-      <p>Unfortunately, at least on input is invalid.</p>
-      <p>Please check your inputs.</p>
-    </template>
-    <template #actions>
-      <base-button @click="confirmError">Okay</base-button>
-    </template>
-  </base-dialog>
+  <teleport to="body">
+    <base-dialog v-if="inputIsInvalid" title="Invalid Input" @close="confirmError">
+      <template #default>
+        <p>Unfortunately, at least on input is invalid.</p>
+        <p>Please check your inputs.</p>
+      </template>
+      <template #actions>
+        <base-button @click="confirmError">Okay</base-button>
+      </template>
+    </base-dialog>
+  </teleport>
   <base-card>
     <form @submit.prevent="submitData">
       <div class="form-control">
