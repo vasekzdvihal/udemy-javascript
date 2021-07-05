@@ -8,14 +8,22 @@
 
 <script>
   export default {
-    data() {
+    props: ['modelValue'],
+    emits: ['update:modelValue'],
+/*    data() {
       return {
-        activeOption: null
+        activeOption: this.modelValue,
       };
+    },*/
+    computed: {
+      activeOption() {
+        return this.modelValue;
+      }
     },
     methods: {
       activate(option) {
         this.activeOption = option;
+        this.$emit('update:modelValue', option);
       }
     }
   }
