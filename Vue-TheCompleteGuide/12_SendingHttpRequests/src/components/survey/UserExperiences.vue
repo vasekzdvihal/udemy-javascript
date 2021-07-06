@@ -37,7 +37,7 @@ export default {
   methods: {
     loadExperiences() {
       this.isLoading = true;
-      fetch('https://vue-http-demo-771eb-default-rtdb.firebaseio.com/surveys')
+      fetch('https://vue-http-demo-771eb-default-rtdb.firebaseio.com/surveys.json')
         .then((response) => {
           if(response.ok) {
             return response.json();
@@ -53,7 +53,8 @@ export default {
             });
           }
         this.results = results;
-      }).catch(() => {
+      }).catch((error) => {
+        console.log(error);
         this.isLoading = false;
         this.error = 'Failed to fetch data - please try again.'
       });
