@@ -56,6 +56,13 @@ router.beforeEach(function(to, form, next) {
     next();
 });
 
+router.afterEach(function (to, from) {
+   // sending analytics data
+
+    console.log('global afterEach');
+   console.log(from, to);
+});
+
 const app = createApp(App);
 
 app.use(router);
