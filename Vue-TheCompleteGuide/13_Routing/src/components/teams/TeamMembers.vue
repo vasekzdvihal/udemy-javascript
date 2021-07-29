@@ -31,6 +31,12 @@ export default {
   created() {
     this.loadTeamMembers(this.teamId);
   },
+  beforeRouteUpdate(to, from, next) {
+    // this.loadTeamMembers(to.params.teamId);
+    console.log('Team Members Component beforeRouteUpdate')
+    console.log(from, to);
+    next();
+  },
   methods: {
     loadTeamMembers(teamId) {
       //this.$route.path // /teams/t1

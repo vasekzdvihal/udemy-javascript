@@ -21,9 +21,18 @@ const router = createRouter({
                 { name: 'team-members', path: ':teamId', component: TeamMembers, props: true } // /teams/t1
             ]
         }, // our-domain.com/teams => TeamsList
-        { path: '/users', components: {
-            default: UsersList, footer: UsersFootere
-            }},
+        {
+            path: '/users',
+            components: {
+                default: UsersList,
+                footer: UsersFootere
+            },
+            beforeEnter(to, from, next) {
+                console.log('users before enter');
+                console.log(to, from);
+                next();
+            }
+        },
         { path: '/:notFound(.*)', component: NotFound }
     ],
     linkActiveClass: 'active',
@@ -37,7 +46,7 @@ const router = createRouter({
 });
 
 router.beforeEach(function(to, form, next) {
-   console.log('Global beforeEach')
+   console.log('global beforeEach')
     console.log(to, form);
    // if(to.name === 'team-members') {
    //     next();
