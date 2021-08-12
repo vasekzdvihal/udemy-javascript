@@ -4,7 +4,7 @@
     <button @click="animateBlock">Animate</button>
   </div>
   <div class="container">
-    <transition name="para">
+    <transition name="para" @before-enter="beforeEnter" @before-leave="beforeLeave" @enter="enter" @after-enter="afterEnter" @leave="leave" @after-leave="afterLeave">
       <p v-if="paraIsVisible">This is somethisdfa</p>
     </transition>
     <button @click="togglePara">Toggle Paragraph</button>
@@ -52,6 +52,30 @@ export default {
     },
     hideUsers() {
       this.usersAreVisible = false;
+    },
+    beforeEnter(el) {
+      console.log('before enter');
+      console.log(el);
+    },
+    beforeLeave(el) {
+      console.log('before leave');
+      console.log(el); // Tohle je element kterej je animovanej. Muze to pouzit treba ke zmenam stylu atp...
+    },
+    enter(el) {
+      console.log('enter');
+      console.log(el);
+    },
+    afterEnter(el) {
+      console.log('after enter');
+      console.log(el);
+    },
+    leave(el) {
+      console.log('leave');
+      console.log(el);
+    },
+    afterLeave(el) {
+      console.log('after leave');
+      console.log(el);
     }
   },
 };
