@@ -1,47 +1,54 @@
 <template>
-  <div class="container">
-    <users-list></users-list>
-  </div>
-  <div class="container">
-    <div class="block" :class="{animate: animatedBlock}"></div>
-    <button @click="animateBlock">Animate</button>
-  </div>
-  <div class="container">
-    <transition :css="false"
-                @before-enter="beforeEnter"
-                @before-leave="beforeLeave"
-                @enter="enter"
-                @after-enter="afterEnter"
-                @leave="leave"
-                @after-leave="afterLeave"
-                @enter-cancelled="enterCanceled"
-                @leave-cancelled="leaveCanceled">
-      <p v-if="paraIsVisible">This is somethisdfa</p>
-    </transition>
-    <button @click="togglePara">Toggle Paragraph</button>
-  </div>
-  <div class="container">
+  <router-view v-slot="slotProps">
     <transition name="fade-button" mode="out-in">
-      <button @click="showUsers" v-if="!usersAreVisible">Show Users</button>
-      <button @click="hideUsers" v-else>Hide Users</button>
+      <component :is="slotProps.Component"></component>
     </transition>
-  </div>
-    <base-modal @close="hideDialog" :open="dialogIsVisible">
-      <p>This is a test dialog!</p>
-      <button @click="hideDialog">Close it!</button>
-    </base-modal>
-  <div class="container">
-    <button @click="showDialog">Show Dialog</button>
-  </div>
+  </router-view>
+
+
+<!--  <div class="container">-->
+<!--    <users-list></users-list>-->
+<!--  </div>-->
+<!--  <div class="container">-->
+<!--    <div class="block" :class="{animate: animatedBlock}"></div>-->
+<!--    <button @click="animateBlock">Animate</button>-->
+<!--  </div>-->
+<!--  <div class="container">-->
+<!--    <transition :css="false"-->
+<!--                @before-enter="beforeEnter"-->
+<!--                @before-leave="beforeLeave"-->
+<!--                @enter="enter"-->
+<!--                @after-enter="afterEnter"-->
+<!--                @leave="leave"-->
+<!--                @after-leave="afterLeave"-->
+<!--                @enter-cancelled="enterCanceled"-->
+<!--                @leave-cancelled="leaveCanceled">-->
+<!--      <p v-if="paraIsVisible">This is somethisdfa</p>-->
+<!--    </transition>-->
+<!--    <button @click="togglePara">Toggle Paragraph</button>-->
+<!--  </div>-->
+<!--  <div class="container">-->
+<!--    <transition name="fade-button" mode="out-in">-->
+<!--      <button @click="showUsers" v-if="!usersAreVisible">Show Users</button>-->
+<!--      <button @click="hideUsers" v-else>Hide Users</button>-->
+<!--    </transition>-->
+<!--  </div>-->
+<!--    <base-modal @close="hideDialog" :open="dialogIsVisible">-->
+<!--      <p>This is a test dialog!</p>-->
+<!--      <button @click="hideDialog">Close it!</button>-->
+<!--    </base-modal>-->
+<!--  <div class="container">-->
+<!--    <button @click="showDialog">Show Dialog</button>-->
+<!--  </div>-->
 </template>  
 
 <script>
-import UsersList from "./components/UsersList";
+// import UsersList from "./components/UsersList";
 
 export default {
-  components: {
-    UsersList,
-  },
+  // components: {
+  //   UsersList,
+  // },
   data() {
     return {
       dialogIsVisible: false,
@@ -124,6 +131,15 @@ export default {
 </script>
 
 <style>
+.route-enter-from {}
+.route-enter-active {
+  animation: slide-fade 0.4s ease-out;
+}
+.route-enter-to {}
+.route-leave-active {
+  animation: slide-fade 0.4s ease-in;
+}
+
 .animate {
   animation: slide-fade 0.3s ease-out forwards;
 }
