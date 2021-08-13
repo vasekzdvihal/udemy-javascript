@@ -4,7 +4,7 @@
     <button @click="animateBlock">Animate</button>
   </div>
   <div class="container">
-    <transition name="para"
+    <transition :css="false"
                 @before-enter="beforeEnter"
                 @before-leave="beforeLeave"
                 @enter="enter"
