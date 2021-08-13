@@ -4,7 +4,15 @@
     <button @click="animateBlock">Animate</button>
   </div>
   <div class="container">
-    <transition name="para" @before-enter="beforeEnter" @before-leave="beforeLeave" @enter="enter" @after-enter="afterEnter" @leave="leave" @after-leave="afterLeave">
+    <transition name="para"
+                @before-enter="beforeEnter"
+                @before-leave="beforeLeave"
+                @enter="enter"
+                @after-enter="afterEnter"
+                @leave="leave"
+                @after-leave="afterLeave"
+                @enter-cancelled="enterCanceled"
+                @leave-cancelled="leaveCanceled">
       <p v-if="paraIsVisible">This is somethisdfa</p>
     </transition>
     <button @click="togglePara">Toggle Paragraph</button>
@@ -32,6 +40,8 @@ export default {
       animatedBlock: false,
       paraIsVisible: false,
       usersAreVisible: false,
+      enterInterval: null,
+      leaveInterval: null,
     };
   },
   methods: {
@@ -55,62 +65,57 @@ export default {
     },
     beforeEnter(el) {
       console.log('before enter');
-      console.log(el);
+      el.style.opacity = 0;
+    },
+    enter(el, done) {
+      console.log('enter');
+      let round = 1;
+      this.enterInterval = setInterval(() => {
+        el.style.opacity = round * 0.01;
+        round++;
+        if(round > 100) {
+          clearInterval(this.enterInterval);
+          done();
+        }
+      }, 20);
+    },
+    afterEnter() {
+      console.log('after enter');
     },
     beforeLeave(el) {
       console.log('before leave');
       console.log(el); // Tohle je element kterej je animovanej. Muze to pouzit treba ke zmenam stylu atp...
+      el.style.opacity = 1;
     },
-    enter(el) {
-      console.log('enter');
-      console.log(el);
-    },
-    afterEnter(el) {
-      console.log('after enter');
-      console.log(el);
-    },
-    leave(el) {
+    leave(el, done) {
       console.log('leave');
-      console.log(el);
+      let round = 1;
+      this.leainterval = setInterval(() => {
+        el.style.opacity = 1 - round * 0.01;
+        round++;
+        if(round > 100) {
+          clearInterval(this.leainterval);
+          done();
+        }
+      }, 20);
     },
     afterLeave(el) {
       console.log('after leave');
       console.log(el);
-    }
+    },
+    enterCanceled() {
+      console.log('enter canceled');
+      clearInterval(this.enterInterval);
+    },
+    leaveCanceled() {
+      console.log('leave canceled');
+      clearInterval(this.leaveInterval);
+    },
   },
 };
 </script>
 
 <style>
-.para-enter-from {
-  opacity: 0;
-  transform: translateY(-30px);
-}
-
-.para-enter-active {
-  transition: all 0.3s ease-out;
-  /*animation: slide-scale 0.3s ease-out;*/
-}
-
-.para-enter-to {
-  opacity: 1;
-  transform: translateY(0px);
-}
-
-.para-leave-from {
-  opacity: 1;
-  transform: translateY(0px);
-}
-
-.para-leave-active {
-  transition: all 0.3s ease-in;
-}
-
-.para-leave-to {
-  opacity: 0;
-  transform: translateY(30px);
-}
-
 .animate {
   animation: slide-fade 0.3s ease-out forwards;
 }
