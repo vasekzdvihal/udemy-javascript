@@ -7,7 +7,7 @@ export default {
   name: "TheCounter",
   computed: {
     counted() {
-      return this.$store.state.counter;
+      return this.$store.getters.finalCounter;
     },
   },
 }
