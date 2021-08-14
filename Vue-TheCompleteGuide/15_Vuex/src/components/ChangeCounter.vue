@@ -7,7 +7,7 @@ export default {
   name: "ChangeCounter",
   methods: {
     addOne() {
-      this.$store.commit('increment')
+      this.$store.dispatch('increment');
     }
   }
 }
