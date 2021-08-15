@@ -15,16 +15,6 @@ export default {
       isLoggedIn: false,
     };
   },
-  provide() {
-    return {
-      isLoggedIn: this.isLoggedIn,
-      cart: this.cart,
-      addProductToCart: this.addProductToCart,
-      removeProductFromCart: this.removeProductFromCart,
-      login: this.login,
-      logout: this.logout,
-    };
-  },
   methods: {
     login() {
       this.isLoggedIn = true;
@@ -40,11 +30,9 @@ export default {
 * {
   box-sizing: border-box;
 }
-
 html {
   font-family: sans-serif;
 }
-
 body {
   margin: 0;
 }

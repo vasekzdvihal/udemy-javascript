@@ -1,4 +1,5 @@
 export default {
+    namespaced: true,
     state() {
       return {
           cart: { items: [], total: 0, qty: 0 },
@@ -6,11 +7,13 @@ export default {
     },
     mutations: {
         addProductToCart(state, payload) {
-            const productData = payload.product;
+            const productData = payload;
+            console.log(productData);
+            console.log(state.cart);
             const productInCartIndex = state.cart.items.findIndex(
-                (ci) => ci.productId === productData.id
+                (ci) => ci.id === productData.id
             );
-
+            console.log(productInCartIndex);
             if (productInCartIndex >= 0) {
                 state.items[productInCartIndex].qty++;
             } else {
@@ -25,6 +28,7 @@ export default {
             }
             state.cart.qty++;
             state.cart.total += productData.price;
+            console.log(state.cart);
         },
         removeProductFromCart(state, payload) {
             const prodId = payload.productId;
@@ -39,7 +43,10 @@ export default {
     },
     actions: {
         addToCart(context, payload) {
-            context.commit('addProductToCart', payload);
+            const prodId = payload.id;
+            const products = context.rootGetters['products/products'];
+            const product = products.find(prod => prod.id === prodId);
+            context.commit('addProductToCart', product);
         },
         removeFromCard(context, payload) {
             context.commit('removeProductFromCart', payload);
@@ -47,13 +54,13 @@ export default {
     },
     getters: {
         products(state) {
-            return state.items;
+            return state.cart.items;
         },
         totalSum(state) {
-            return state.total;
+            return state.cart.total;
         },
         quantity(state) {
-            return state.qty;
+            return state.cart.qty;
         }
     }
 };
