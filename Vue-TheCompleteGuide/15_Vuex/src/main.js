@@ -1,82 +1,8 @@
 import { createApp } from 'vue';
-import { createStore } from 'vuex';
 
 import App from './App.vue';
+import store from './store/index'
 
-const counterModule = {
-    namespaced: true,
-    state() {
-        return {
-            counter: 0,
-        };
-    },
-    mutations: {
-        increment(state) {
-            state.counter++;
-        },
-        increase(state, payload) {
-            console.log(state);
-            state.counter = state.counter + payload.value;
-        },
-    },
-    actions: { // v action jdou delat async operace
-        increment(context) {
-            setTimeout(function() {
-                context.commit('increment');
-            }, 2000);
-        },
-        increase(context, payload) {
-            console.log(context);
-            context.commit('increase', payload)
-        },
-    },
-    getters: {
-        testAuth(state, getters, rootState) {
-            return rootState.isLoggedIn;
-        },
-        finalCounter(state) {
-            return state.counter * 3;
-        },
-        normalizeCounter(_, getters) { // pouziva se kdyz to prvni nepouzivam ale potrebuji to abych se dostal ke druhymu
-            if(getters.finalCounter < 0) {
-                return 0;
-            }
-            if(getters.finalCounter > 100) {
-                return 100;
-            }
-            return getters.finalCounter;
-        },
-    }
-}
-
-const store = createStore({
-   modules: {
-     numbers: counterModule,
-   },
-   state() {
-       return {
-           isLoggedIn: false,
-       };
-   },
-    mutations: {
-       setAuth(state, payload) {
-           state.isLoggedIn = payload.isAuth;
-       }
-    },
-    actions: {
-      login(context) {
-          context.commit('setAuth', { isAuth: true });
-      },
-      logout(context) {
-          context.commit('setAuth', { isAuth: false })
-      },
-    },
-    getters: {
-       userIsAuthenticated(state) {
-           return state.isLoggedIn;
-       }
-    }
-});
 const app = createApp(App);
 
 app.use(store);
