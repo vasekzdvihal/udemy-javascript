@@ -14,10 +14,11 @@ const counterModule = {
             state.counter++;
         },
         increase(state, payload) {
+            console.log(state);
             state.counter = state.counter + payload.value;
         },
     },
-    actions: {
+    actions: { // v action jdou delat async operace
         increment(context) {
             setTimeout(function() {
                 context.commit('increment');
@@ -29,6 +30,9 @@ const counterModule = {
         },
     },
     getters: {
+        testAuth(state, getters, rootState) {
+            return rootState.isLoggedIn;
+        },
         finalCounter(state) {
             return state.counter * 3;
         },
