@@ -12,10 +12,11 @@ import BaseContainer from './components/BaseContainer.vue';
 import TheCounter from "./components/TheCounter";
 import ChangeCounter from "./components/ChangeCounter";
 import FavouriteValue from "./components/FavouriteValue";
+import UserAuth from "./components/UserAuth";
 
 export default {
   components: {
-    BaseContainer, TheCounter, ChangeCounter, FavouriteValue
+    BaseContainer, TheCounter, ChangeCounter, FavouriteValue, UserAuth
   },
   methods: {
     addOne() {
