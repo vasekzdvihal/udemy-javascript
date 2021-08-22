@@ -1,9 +1,12 @@
 <template>
-  <base-container title="Vuex">
+  <base-container title="Vuex" v-if="isAuth">
     <the-counter/>
     <favourite-value/>
     <button @click="addOne">Add 9</button>
     <change-counter/>
+  </base-container>
+  <base-container title="Auth">
+    <user-auth></user-auth>
   </base-container>
 </template>
 
@@ -22,9 +25,14 @@ export default {
     addOne() {
       // this.$store.dispatch('increase', { value: 9})
       this.$store.dispatch({
-        type: 'increase',
+        type: 'numbers/increase',
         value: 9
       });
+    }
+  },
+  computed: {
+    isAuth() {
+      return this.$store.getters.userIsAuthenticated;
     }
   }
 };
