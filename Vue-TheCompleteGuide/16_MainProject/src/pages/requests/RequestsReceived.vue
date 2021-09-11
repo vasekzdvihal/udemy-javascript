@@ -20,10 +20,10 @@ export default {
   components: { RequestsItem },
   computed: {
     receivedRequests() {
-      return this.$store.getters['requests/requests'];
+      return this.$store.getters['requests/myRequests'];
     },
     hasRequests() {
-      return this.$store.getters['requests/hasRequests'];
+      return this.$store.getters['requests/hasMyRequests'];
     }
   }
 }
