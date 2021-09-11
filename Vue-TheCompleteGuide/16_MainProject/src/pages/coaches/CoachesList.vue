@@ -8,17 +8,27 @@
       <router-link to="/register">Register as Coach</router-link>
     </div>
     <ul v-if="hasCoaches">
-      <li v-for="coach in filteredCoaches" :key="coach.id">
-        {{ coach.firstName }}
-      </li>
+      <coach-item
+          v-for="coach in filteredCoaches"
+          :id="coach.id"
+          :key="coach.id"
+          :areas="coach.areas"
+          :first-name="coach.firstName"
+          :last-name="coach.lastName"
+          :rate="coach.hourlyRate"
+      >
+      </coach-item>
     </ul>
     <h3 v-else>No coaches found.</h3>
   </section>
 </template>
 
 <script>
+import CoachItem from "../../components/coaches/CoachItem";
+
 export default {
   name: "CoachesList",
+  components: { CoachItem },
   computed: {
     filteredCoaches() {
       return this.$store.getters['coaches/coaches'];
@@ -31,5 +41,14 @@ export default {
 </script>
 
 <style scoped>
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 
+.controls {
+  display: flex;
+  justify-content: space-between;
+}
 </style>
