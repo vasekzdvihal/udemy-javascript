@@ -22,7 +22,9 @@ export default {
             id: userId
         });
     },
-    async loadCoaches(context) {
+    async loadCoaches(context, payload) {
+        if(!payload.forceRefresh && !context.getters.shouldUpdate) return; // Caching check
+
         const response = await fetch(`https://vue-http-demo2-fc296-default-rtdb.firebaseio.com/coaches.json`);
         const responseData = await response.json();
         if(!response.ok) {
@@ -30,7 +32,6 @@ export default {
         }
 
         const coaches = [];
-
         for( const key in responseData) {
             const coach = {
                 id: key,
@@ -43,5 +44,6 @@ export default {
             coaches.push(coach);
         }
         context.commit('setCoaches', coaches);
+        context.commit('setFetchTimestamp');
     }
 };
