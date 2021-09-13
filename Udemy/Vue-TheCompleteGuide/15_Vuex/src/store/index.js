@@ -4,7 +4,7 @@ import rootMutations from "./mutations";
 import rootActions from './actions';
 import rootGetters from './getters';
 
-import counterModule from'./counter/index';
+import counterModule from './counter';
 
 const store = createStore({
     modules: {

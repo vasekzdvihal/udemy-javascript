@@ -1,4 +1,4 @@
-console.log('MyArrays');
+console.log('CustomArrayFunctions');
 
 // indexOf
 function indexOf(array, value) {
