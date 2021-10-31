@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import { ref } from 'vue';
+import { isReactive, isRef, ref, toRefs } from 'vue';
 import { reactive } from 'vue';
 
 export default {
@@ -34,6 +34,11 @@ export default {
       userReactiveObject.name = 'Váša';
       userReactiveObject.age = 30;
     }, 2000);
+
+      if (isRef(userRefObject) || isReactive(userRefObject)) console.log('is reactive');
+
+     const userRefs = toRefs(userRefObject);
+    console.log(userRefs);
 
     return {
       user: userRefObject,
