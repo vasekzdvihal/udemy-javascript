@@ -7,13 +7,19 @@
 </template>
 
 <script>
-import { ref } from 'vue';
+import { computed, inject } from 'vue';
 
 export default {
-  setup() {
-    const title = ref('');
-    const price = ref(null);
-    const description = ref('');
+  props: ['pid'],
+  setup(props) {
+    const products = inject('products');
+    const selectedProduct = computed(() => {
+      return products.value.find(product => product.id === props.pid);
+    });
+
+    const title = computed(() => selectedProduct.value.title);
+    const price = computed(() => selectedProduct.value.price);
+    const description = computed(() => selectedProduct.value.description);
 
     return { title, price, description };
   },
