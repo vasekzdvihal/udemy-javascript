@@ -2,54 +2,29 @@
   <section class="container">
     <h2>{{ user.name }}</h2>
     <h3>{{ user.age }}</h3>
-  </section>
-  <section class="container">
-    <h2>{{ secondUser.name }}</h2>
-    <h3>{{ secondUser.age }}</h3>
+    <button @click="increaseAge">Change Age</button>
   </section>
 </template>
 
 <script>
-import { isReactive, isRef, ref, toRefs } from 'vue';
 import { reactive } from 'vue';
 
 export default {
   setup() {
-    // const uName = ref('Vašek'); // ref create reactive value
-    // const uAge = ref(25);
-
-    const userRefObject = ref({
+    const user = reactive({
       name: 'Vašek',
       age: 25,
     });
 
-    const userReactiveObject = reactive({
-      name: 'Vašek',
-      age: 25,
-    });
-
-    setTimeout(function () {
-      userRefObject.value.name = 'Váša';
-      userRefObject.value.age = 30;
-      userReactiveObject.name = 'Váša';
-      userReactiveObject.age = 30;
-    }, 2000);
-
-      if (isRef(userRefObject) || isReactive(userRefObject)) console.log('is reactive');
-
-     const userRefs = toRefs(userRefObject);
-    console.log(userRefs);
+    function setNewData() {
+      user.age++;
+    }
 
     return {
-      user: userRefObject,
-      secondUser: userReactiveObject,
+      user: user,
+      increaseAge: setNewData,
     };
   },
-  // data() {
-  //   return {
-  //     userName: 'Maximilian',
-  //   };
-  // },
 };
 </script>
 
