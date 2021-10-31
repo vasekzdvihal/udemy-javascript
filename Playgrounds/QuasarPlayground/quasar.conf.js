@@ -83,17 +83,17 @@ module.exports = configure((ctx) => ({
   framework: {
     config: {},
 
-    // iconSet: 'material-icons', // Quasar icon set
-    // lang: 'en-US', // Quasar language pack
+    // iconSet: 'material-icons', // QuasarPlayground icon set
+    // lang: 'en-US', // QuasarPlayground language pack
 
     // For special cases outside of where the auto-import strategy can have an impact
     // (like functional components as one of the examples),
-    // you can manually specify Quasar components/directives to be available everywhere:
+    // you can manually specify QuasarPlayground components/directives to be available everywhere:
     //
     // components: [],
     // directives: [],
 
-    // Quasar plugins
+    // QuasarPlayground plugins
     plugins: [],
   },
 
@@ -138,9 +138,9 @@ module.exports = configure((ctx) => ({
     },
 
     manifest: {
-      name: 'Quasar',
-      short_name: 'Quasar',
-      description: 'A Quasar Framework app',
+      name: 'QuasarPlayground',
+      short_name: 'QuasarPlayground',
+      description: 'A QuasarPlayground Framework app',
       display: 'standalone',
       orientation: 'portrait',
       background_color: '#ffffff',
