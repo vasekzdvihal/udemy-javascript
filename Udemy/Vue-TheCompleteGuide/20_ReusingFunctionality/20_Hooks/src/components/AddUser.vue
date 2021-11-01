@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import { ref } from 'vue';
+import useAlert from '../hooks/alert';
 import UserAlert from './UserAlert.vue';
 
 export default {
@@ -17,19 +17,11 @@ export default {
     UserAlert,
   },
   setup() {
-    const alertIsVisible = ref(false);
-
-    function showAlert() {
-      alertIsVisible.value = true;
-    }
-    function hideAlert() {
-      alertIsVisible.value = false;
-    }
-    
+    const [alertIsVisible, showAlert, hideAlert] = useAlert();
     return {
       alertIsVisible,
       showAlert,
-      hideAlert
+      hideAlert,
     };
   },
 };
