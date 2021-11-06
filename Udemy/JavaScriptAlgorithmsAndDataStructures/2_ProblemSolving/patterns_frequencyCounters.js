@@ -42,3 +42,35 @@ function same(arr1, arr2) {
   }
   return true;
 }
+
+// EX.: Given two strings, write a function to determine if the second string is an anagram of the first.
+// An anagram is a word, phrase, or name formed by rearranging the letters of another, such as cinema, formed from iceman.
+
+const d = validAnagram('', '') // true
+const e = validAnagram('aaz', 'zza') // false
+const f = validAnagram('anagram', 'nagaram') // true
+const g = validAnagram("rat","car") // false) // false
+const h = validAnagram('awesome', 'awesom') // false
+const i = validAnagram('qwerty', 'qeywrt') // true
+const j = validAnagram('texttwisttime', 'timetwisttext') // true
+
+console.log(d, e, f, g, h, i ,j);
+
+function validAnagram(str1, str2) {
+  if(str1.length !== str2.length) return false;
+
+  let frequencyCounter1 = {};
+  let frequencyCounter2 = {};
+
+  for(let s of str1) {
+    frequencyCounter1[s] = (frequencyCounter1[s] || 0) + 1
+  }
+  for(let s of str2) {
+    frequencyCounter2[s] = (frequencyCounter2[s] || 0) + 1
+  }
+  for(let key in frequencyCounter1) {
+    if(!(key in frequencyCounter2)) return false;
+    if(frequencyCounter1[key] !== frequencyCounter2[key]) return false;
+  }
+  return true;
+}
