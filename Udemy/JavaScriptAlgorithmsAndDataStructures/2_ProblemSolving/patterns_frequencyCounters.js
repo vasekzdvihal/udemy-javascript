@@ -102,4 +102,4 @@ function validAnagramTeacherSolution(first, second) {
   return true;
 }
 
-console.log(validAnagramTeacherSolution('anagrams', 'nagaramm'));
+console.log(validAnagramTeacherSolution('anagrams', 'nagarasm'));
