@@ -42,3 +42,38 @@ function bubbleSort(arr) {
 console.log('Bubble Sort:');
 console.log(bubbleSort([1, 3, 23, 4, 5, 6, 7, 8, 9, 10])); // [1, 3, 4, 5, 6, 7, 8, 9, 10, 23]
 
+// teacher version
+function bubbleSort2(arr) {
+  for (let i = arr.length; i > 0; i--) {
+    for (let j = 0; j < i - 1; j++) {
+      console.log(arr, arr[j], arr[j + 1]);
+      if (arr[j] > arr[j + 1]) {
+        // SWAP!
+        const temp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = temp;
+      }
+    }
+    console.log('ONE PASS');
+  }
+  return arr;
+}
+
+console.log('Bubble Sort 2:');
+console.log(bubbleSort2([1, 3, 23, 4, 5, 6, 7, 8, 9, 10])); // [1, 3, 4, 5, 6, 7, 8, 9, 10, 23]
+
+// ES6 version
+function bubbleSort3(arr) {
+  const swap = (arr, idx1, idx2) => {
+    [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]];
+  };
+
+  for (let i = arr.length; i > 0; i--) {
+    for (let j = 0; j < i - 1; j++) {
+      if (arr[j] > arr[j + 1]) {
+        swap(arr, j, j + 1);
+      }
+    }
+  }
+  return arr;
+}
