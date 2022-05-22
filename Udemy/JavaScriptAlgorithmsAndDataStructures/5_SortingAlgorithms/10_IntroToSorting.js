@@ -42,3 +42,20 @@ function compareByLen(str1, str2) {
 }
 
 console.log(['Steele', 'Colt', 'Data Structures', 'Algorithms'].sort(compareByLen)); // Expected output: ['Algorithms', 'Colt', 'Data Structures', 'Steele']
+
+//   Basic Sorting Algorithms
+// |----------------|------------------------|---------------------------|-------------------------|------------------|
+// | Algorithm      | Time Complexity (Best) | Time Complexity (Average) | Time Complexity (Worst) | Space Complexity |
+// |----------------|------------------------|---------------------------|-------------------------|------------------|
+// | Bubble Sort    | O(n)                   | O(n^2)                    |  O(n^2)                 | O(1)             |
+// | InsertionSort  | O(n)                   | O(n^2)                    |  O(n^2)                 | O(1)             |
+// | Selection Sort | O(n^2)                 | O(n^2)                    |  O(n^2)                 | O(1)             |
+// |----------------|------------------------|---------------------------|-------------------------|------------------|
+
+// https://www.toptal.com/developers/sorting-algorithms
+
+// Recap
+// - Sorting is fundamental!
+// - Bubble sort, selection sort and insertion sort are all roughly equivalent
+// - All have average time complexities that are quadratic
+// - We can do better...but we need more complex algorithms
