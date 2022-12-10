@@ -39,11 +39,17 @@ class Student {
     let sum = this.scores.reduce(function(a,b) {return a + b});
     return sum / this.scores.length;
   }
+
+  // class methods
+  static enrollStudents() {
+    return 'Enrolling Students!';
+  }
 }
 
 // The method to create a new object must be called constructor.
 // The class keyword creates a constant, so you cannot redefine it.
 
+// Class basic, constructors
 let firstStudent = new Student("Tony", "Stark", 5);
 let secondStudent = new Student("Steve", "Rogers", 100);
 
@@ -68,4 +74,36 @@ console.log(secondStudent.addScore(100));
 console.log(secondStudent.addScore(89));
 console.log('Average score: ' + secondStudent.calculateAverage());
 
+// Class Methods
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/static
 
+console.log(Student.enrollStudents());
+
+
+class Point {
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+  }
+
+  static distance(a, b) {
+    const dx = a.x - b.x;
+    const dy = a.y - b.y;
+
+    return Math.hypot(dx, dy);
+  }
+}
+
+const p1 = new Point(5, 5);
+const p2 = new Point(10, 10);
+console.log(`Point distance between p1[${p1.x},${p1.y}] and p2[${p2.x},${p2.y}]`, Point.distance(p1, p2));
+
+// One gotcha with `this`
+// Inside all of our instance methods and constructor, the keyword `this` refers to the object created from that class (also known as an instance of the class).
+
+// Recap
+// - Classes are blueprints that wen created make objects known as instances
+// - Classes are created with the new keyword
+// - The constructor function is a special function that gets run when the class is instantiated
+// - Instance methods can be added to classes similar to methods in objects
+// - Class methods can be added using the static keyword
