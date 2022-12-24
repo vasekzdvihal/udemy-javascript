@@ -144,6 +144,20 @@ class SinglyLinkedList {
     }
     return current;
   }
+
+  // Pseudocode for set (changing the value of a node based on its position in the Linked List)
+  // This function should accept a value and an index
+  // Use your get function to find the specific node
+  // If the node is not found, return false
+  // If the node is found, set the value of that node to be the value passed to the function and return true
+  set(index, val) {
+    const foundNode = this.get(index);
+    if (foundNode) {
+      foundNode.val = val;
+      return true;
+    }
+    return false;
+  }
 }
 
 // const first = new Node('Hi');
@@ -185,3 +199,11 @@ console.log(list.get(100));
 console.log(list.get(0));
 console.log(list.get(2));
 console.log(list.get(3));
+
+console.log('>>> set');
+console.log(list.set(-1, 'test'));
+console.log(list.set(100, 'test'));
+console.log(list.set(0, 'test'));
+console.log(list.set(2, 'test'));
+console.log(list.set(3, 'test'));
+console.log(list);
