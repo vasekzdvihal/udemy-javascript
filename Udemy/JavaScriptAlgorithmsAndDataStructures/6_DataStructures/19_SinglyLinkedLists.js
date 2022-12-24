@@ -36,7 +36,7 @@ class SinglyLinkedList {
     this.lenght = 0;
   }
 
-  // Pushing pseudocode
+  // Pushing pseudocode (adding a node to the end of the Linked List)
   // This function should accept a value
   // Create a new node using the value passed to the function
   // If there is no head property on the list, set the head and tail to be the newly created node
@@ -57,7 +57,7 @@ class SinglyLinkedList {
     return this;
   }
 
-  // Pseudocode for pop
+  // Pseudocode for pop (removing a node from the end of the Linked List)
   // If there are no nodes in the list, return undefined
   // Loop through the list until you reach the tail
   // Set the next property of the 2nd to last node to be null
@@ -85,6 +85,49 @@ class SinglyLinkedList {
 
     return current;
   }
+
+  // Pseudocode for shift (removing a node from the beginning of the Linked List)
+  // If there are no nodes, return undefined
+  // Store the current head property in a variable
+  // Set the head property to be the current head's next property
+  // Decrement the length by 1
+  // Return the value of the node removed
+  shift() {
+    if (!this.head) return undefined;
+
+    const currentHead = this.head;
+    this.head = currentHead.next;
+    this.lenght--;
+
+    if (this.lenght === 0) {
+      this.tail = null;
+    }
+
+    return currentHead;
+  }
+
+  // Pseudocode for unshift (adding a node to the beginning of the Linked List)
+  // This function should accept a value
+  // Create a new node using the value passed to the function
+  // If there is no head property on the list, set the head and tail to be the newly created node
+  // Otherwise set the newly created node's next property to be the current head property on the list
+  // Set the head property on the list to be that newly created node
+  // Increment the length of the list by 1
+  // Return the linked list
+  unshift(val) {
+    let newNode = new Node(val);
+
+    if(!this.head) {
+      this.head = newNode;
+      this.tail = this.head;
+    } else {
+      newNode.next = this.head;
+      this.head = newNode;
+    }
+
+    this.lenght++;
+    return this;
+  }
 }
 
 // const first = new Node('Hi');
@@ -94,17 +137,26 @@ class SinglyLinkedList {
 // first.next.next.next.next = new Node('you?');
 
 const list = new SinglyLinkedList();
+
+console.log('>>> push');
 list.push('Hello');
 list.push('Goodbye');
 list.push('!');
 console.log(list);
 
-list.pop();
-console.log(list);
+// console.log(>>> pop');
+// list.pop();
+// list.pop();
+// list.pop();
+// console.log(list);
 
-list.pop();
-console.log(list);
-
-list.pop();
-console.log(list);
-
+// console.log('>>> shift');
+// list.shift();
+// list.shift();
+// list.shift();
+// console.log(list);
+//
+// console.log('>>> unshift');
+// list.unshift('Hey');
+// list.unshift('Hi');
+// console.log(list);
