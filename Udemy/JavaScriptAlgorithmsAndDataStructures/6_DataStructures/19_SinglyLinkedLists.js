@@ -158,6 +158,29 @@ class SinglyLinkedList {
     }
     return false;
   }
+
+  // Pseudocode for insert (adding a node to the Linked List at a specific position)
+  // If the index is less than zero or greater than the length, return false
+  // If the index is the same as the length, push a new node to the end of the list
+  // If the index is 0, unshift a new node to the start of the list
+  // Otherwise, using the get method, access the node at the index - 1
+  // Set the next property on that node to be the new node
+  // Set the next property on the new node to be the previous next
+  // Increment the length
+  // Return true
+  insert(index, val) {
+    if (index < 0 || index > this.lenght) return false;
+    if (index === this.lenght) return !!this.push(val);
+    if (index === 0) return !!this.unshift(val);
+
+    let newNode = new Node(val);
+    let prev = this.get(index - 1);
+    let temp = prev.next;
+    prev.next = newNode;
+    newNode.next = temp;
+    this.lenght++;
+    return true;
+  }
 }
 
 // const first = new Node('Hi');
@@ -200,10 +223,18 @@ console.log(list.get(0));
 console.log(list.get(2));
 console.log(list.get(3));
 
-console.log('>>> set');
-console.log(list.set(-1, 'test'));
-console.log(list.set(100, 'test'));
-console.log(list.set(0, 'test'));
-console.log(list.set(2, 'test'));
-console.log(list.set(3, 'test'));
+// console.log('>>> set');
+// console.log(list.set(-1, 'test'));
+// console.log(list.set(100, 'test'));
+// console.log(list.set(0, 'test'));
+// console.log(list.set(2, 'test'));
+// console.log(list.set(3, 'test'));
+// console.log(list);
+
+console.log('>>> insert');
+console.log(list.insert(-1, 'test'));
+console.log(list.insert(100, 'test'));
+console.log(list.insert(0, 'test'));
+console.log(list.insert(2, 'test'));
+console.log(list.insert(3, 'test'));
 console.log(list);
