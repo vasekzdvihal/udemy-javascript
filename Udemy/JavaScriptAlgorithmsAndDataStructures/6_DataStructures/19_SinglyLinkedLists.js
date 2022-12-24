@@ -86,7 +86,7 @@ class SinglyLinkedList {
     return current;
   }
 
-  // Pseudocode for shift (removing a node from the beginning of the Linked List)
+  // SHIFT (removing a node from the beginning of the Linked List)
   // If there are no nodes, return undefined
   // Store the current head property in a variable
   // Set the head property to be the current head's next property
@@ -106,7 +106,7 @@ class SinglyLinkedList {
     return currentHead;
   }
 
-  // Pseudocode for unshift (adding a node to the beginning of the Linked List)
+  // UNSHIFT (adding a node to the beginning of the Linked List)
   // This function should accept a value
   // Create a new node using the value passed to the function
   // If there is no head property on the list, set the head and tail to be the newly created node
@@ -129,7 +129,7 @@ class SinglyLinkedList {
     return this;
   }
 
-  // Pseudocode for get (retrieving a node by its position in the Linked List)
+  // GET (retrieving a node by its position in the Linked List)
   // This function should accept an index
   // If the index is less than zero or greater than or equal to the length of the list, return null
   // Loop through the list until you reach the index and return the node at that specific index
@@ -145,7 +145,7 @@ class SinglyLinkedList {
     return current;
   }
 
-  // Pseudocode for set (changing the value of a node based on its position in the Linked List)
+  // SET (changing the value of a node based on its position in the Linked List)
   // This function should accept a value and an index
   // Use your get function to find the specific node
   // If the node is not found, return false
@@ -159,7 +159,7 @@ class SinglyLinkedList {
     return false;
   }
 
-  // Pseudocode for insert (adding a node to the Linked List at a specific position)
+  // INSERT (adding a node to the Linked List at a specific position)
   // If the index is less than zero or greater than the length, return false
   // If the index is the same as the length, push a new node to the end of the list
   // If the index is 0, unshift a new node to the start of the list
@@ -180,6 +180,26 @@ class SinglyLinkedList {
     newNode.next = temp;
     this.lenght++;
     return true;
+  }
+
+  // REMOVE (removing a node from the Linked List at a specific position)
+  // If the index is less than zero or greater than the length, return undefined
+  // If the index is the same as the length - 1, pop
+  // If the index is 0, shift
+  // Otherwise, using the get method, access the node at the index - 1
+  // Set the next property on that node to be the next of the next node
+  // Decrement the length
+  // Return the value of the node removed
+  remove(index) {
+    if (index < 0 || index >= this.lenght) return undefined;
+    if (index === 0) return this.shift();
+    if (index === this.lenght - 1) return this.pop();
+
+    let prevNode = this.get(index - 1);
+    let removed = prevNode.next;
+    prevNode.next = removed.next;
+    this.lenght--;
+    return removed;
   }
 }
 
@@ -237,4 +257,12 @@ console.log(list.insert(100, 'test'));
 console.log(list.insert(0, 'test'));
 console.log(list.insert(2, 'test'));
 console.log(list.insert(3, 'test'));
+console.log(list);
+
+console.log('>>> remove');
+console.log(list.remove(-1));
+console.log(list.remove(100));
+console.log(list.remove(0));
+console.log(list.remove(2));
+console.log(list.remove(3));
 console.log(list);
