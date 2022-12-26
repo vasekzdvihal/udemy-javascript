@@ -22,6 +22,16 @@ class DoublyLinkedList {
     this.length = 0;
   }
 
+  print() {
+    let arr = [];
+    let current = this.head;
+    while (current) {
+      arr.push(current.val);
+      current = current.next;
+    }
+    console.log(arr);
+  }
+
   // PUSH (add to the end)
   // Create a new node with the value passed to the function
   // If the head property is null set the head and tail to be the newly created node
@@ -45,14 +55,30 @@ class DoublyLinkedList {
     return this;
   }
 
-  print() {
-    let arr = [];
-    let current = this.head;
-    while (current) {
-      arr.push(current.val);
-      current = current.next;
+  // POP (remove from the end)
+  // If there is no head, return undefined
+  // Store the current tail in a variable to return later
+  // If the length is 1, set the head and tail to be null
+  // Update the tail to be the previous Node
+  // Set the newTail's next to null
+  // Decrement the length
+  // Return the value removed
+  pop() {
+    if (!this.head) return undefined;
+
+    let poppedNode = this.tail;
+
+    if (this.length === 1) {
+      this.head = null;
+      this.tail = null;
+    } else {
+      this.tail = poppedNode.prev;
+      this.tail.next = null;
+      poppedNode.prev = null;
     }
-    console.log(arr);
+
+    this.length--;
+    return poppedNode;
   }
 }
 
@@ -60,7 +86,12 @@ const list = new DoublyLinkedList();
 
 console.log('>>> push')
 list.push('Hello');
+list.push('Bonjour');
 list.push('Howdy');
-list.push('Hi');
+list.push('Hola');
 list.push('Ciao');
+list.print();
+
+console.log('>>> pop')
+list.pop();
 list.print();
