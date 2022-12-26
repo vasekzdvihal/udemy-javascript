@@ -48,7 +48,7 @@ class SinglyLinkedList {
     this.lenght = 0;
   }
 
-  // Pushing pseudocode (adding a node to the end of the Linked List)
+  // PUSH (adding a node to the end of the Linked List)
   // This function should accept a value
   // Create a new node using the value passed to the function
   // If there is no head property on the list, set the head and tail to be the newly created node
@@ -69,7 +69,7 @@ class SinglyLinkedList {
     return this;
   }
 
-  // Pseudocode for pop (removing a node from the end of the Linked List)
+  // POP (removing a node from the end of the Linked List)
   // If there are no nodes in the list, return undefined
   // Loop through the list until you reach the tail
   // Set the next property of the 2nd to last node to be null
