@@ -22,6 +22,18 @@
 // Piece of data - val
 // Reference to next node - next
 
+// -------------------
+// Big O of Singly Linked Lists
+// Insertion - O(1)
+// Removal - It depends... O(1) or O(n)
+// Searching - O(n)
+// Access - O(n)
+
+// Recap
+// Lists are a great alternative to arrays when insertion and deletion at the beginning are frequently required
+// Arrays contain a built-in index whereas lists do not
+// The idea of a list data structure that consists of nodes is the foundation for other data structures like Stacks and Queues
+
 class Node {
   constructor(val) {
     this.val = val;
