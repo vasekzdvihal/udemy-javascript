@@ -201,6 +201,44 @@ class SinglyLinkedList {
     this.lenght--;
     return removed;
   }
+
+  // REVERSE (reversing the Linked List in place)
+  // Swap the head and tail
+  // Create a variable called next
+  // Create a variable called prev
+  // Create a variable called node and initialize it to the head property
+  // Loop through the list
+  // Set next to be the next property on whatever node is
+  // Set the next property on the node to be whatever prev is
+  // Set prev to be the value of the node variable
+  // Set the node variable to be the value of the next variable
+  reverse() {
+    let node = this.head;
+    this.head = this.tail;
+    this.tail = node;
+
+    let next;
+    let prev = null;
+
+    for (let i = 0; i < this.lenght; i++) {
+      next = node.next;
+      node.next = prev;
+
+      prev = node;
+      node = next;
+    }
+    return this;
+  }
+
+  print() {
+    let arr = [];
+    let current = this.head;
+    while (current) {
+      arr.push(current.val);
+      current = current.next;
+    }
+    console.log(arr);
+  }
 }
 
 // const first = new Node('Hi');
@@ -214,34 +252,35 @@ const list = new SinglyLinkedList();
 console.log('>>> push');
 list.push('Hello');
 list.push('Goodbye');
-list.push('!');
-list.push('<3');
-list.push(':)');
-console.log(list);
+list.push('Howdy');
+list.push('Hola');
+list.push('Ciao');
+list.print();
 
 // console.log(>>> pop');
 // list.pop();
 // list.pop();
 // list.pop();
-// console.log(list);
+// list.print();
 
 // console.log('>>> shift');
 // list.shift();
 // list.shift();
 // list.shift();
-// console.log(list);
-//
+// list.print();
+
 // console.log('>>> unshift');
 // list.unshift('Hey');
 // list.unshift('Hi');
-// console.log(list);
+// list.print();
 
-console.log('>>> get');
-console.log(list.get(-1));
-console.log(list.get(100));
-console.log(list.get(0));
-console.log(list.get(2));
-console.log(list.get(3));
+// console.log('>>> get');
+// console.log(list.get(-1));
+// console.log(list.get(100));
+// console.log(list.get(0));
+// console.log(list.get(2));
+// console.log(list.get(3));
+// list.print();
 
 // console.log('>>> set');
 // console.log(list.set(-1, 'test'));
@@ -249,20 +288,24 @@ console.log(list.get(3));
 // console.log(list.set(0, 'test'));
 // console.log(list.set(2, 'test'));
 // console.log(list.set(3, 'test'));
-// console.log(list);
+// list.print();
 
 console.log('>>> insert');
 console.log(list.insert(-1, 'test'));
 console.log(list.insert(100, 'test'));
-console.log(list.insert(0, 'test'));
-console.log(list.insert(2, 'test'));
-console.log(list.insert(3, 'test'));
-console.log(list);
+console.log(list.insert(0, 'Bonjour'));
+console.log(list.insert(2, 'Au revoir'));
+console.log(list.insert(3, 'Salut'));
+list.print();
 
-console.log('>>> remove');
-console.log(list.remove(-1));
-console.log(list.remove(100));
-console.log(list.remove(0));
-console.log(list.remove(2));
-console.log(list.remove(3));
-console.log(list);
+// console.log('>>> remove');
+// console.log(list.remove(-1));
+// console.log(list.remove(100));
+// console.log(list.remove(0));
+// console.log(list.remove(2));
+// console.log(list.remove(3));
+// list.print();
+
+console.log('>>> reverse');
+list.reverse();
+list.print();
