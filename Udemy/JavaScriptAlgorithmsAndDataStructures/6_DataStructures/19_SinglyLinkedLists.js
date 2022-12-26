@@ -48,7 +48,17 @@ class SinglyLinkedList {
     this.lenght = 0;
   }
 
-  // Pushing pseudocode (adding a node to the end of the Linked List)
+  print() {
+    let arr = [];
+    let current = this.head;
+    while (current) {
+      arr.push(current.val);
+      current = current.next;
+    }
+    console.log(arr);
+  }
+
+  // PUSH (adding a node to the end of the Linked List)
   // This function should accept a value
   // Create a new node using the value passed to the function
   // If there is no head property on the list, set the head and tail to be the newly created node
@@ -69,7 +79,7 @@ class SinglyLinkedList {
     return this;
   }
 
-  // Pseudocode for pop (removing a node from the end of the Linked List)
+  // POP (removing a node from the end of the Linked List)
   // If there are no nodes in the list, return undefined
   // Loop through the list until you reach the tail
   // Set the next property of the 2nd to last node to be null
@@ -241,82 +251,45 @@ class SinglyLinkedList {
     }
     return this;
   }
-
-  print() {
-    let arr = [];
-    let current = this.head;
-    while (current) {
-      arr.push(current.val);
-      current = current.next;
-    }
-    console.log(arr);
-  }
 }
-
-// const first = new Node('Hi');
-// first.next = new Node('there');
-// first.next.next = new Node('how');
-// first.next.next.next = new Node('are');
-// first.next.next.next.next = new Node('you?');
 
 const list = new SinglyLinkedList();
 
 console.log('>>> push');
 list.push('Hello');
-list.push('Goodbye');
+list.push('Bonjour');
 list.push('Howdy');
 list.push('Hola');
 list.push('Ciao');
 list.print();
 
-// console.log(>>> pop');
-// list.pop();
-// list.pop();
-// list.pop();
-// list.print();
-
-// console.log('>>> shift');
-// list.shift();
-// list.shift();
-// list.shift();
-// list.print();
-
-// console.log('>>> unshift');
-// list.unshift('Hey');
-// list.unshift('Hi');
-// list.print();
-
-// console.log('>>> get');
-// console.log(list.get(-1));
-// console.log(list.get(100));
-// console.log(list.get(0));
-// console.log(list.get(2));
-// console.log(list.get(3));
-// list.print();
-
-// console.log('>>> set');
-// console.log(list.set(-1, 'test'));
-// console.log(list.set(100, 'test'));
-// console.log(list.set(0, 'test'));
-// console.log(list.set(2, 'test'));
-// console.log(list.set(3, 'test'));
-// list.print();
-
-console.log('>>> insert');
-console.log(list.insert(-1, 'test'));
-console.log(list.insert(100, 'test'));
-console.log(list.insert(0, 'Bonjour'));
-console.log(list.insert(2, 'Au revoir'));
-console.log(list.insert(3, 'Salut'));
+console.log('>>> pop');
+list.pop();
 list.print();
 
-// console.log('>>> remove');
-// console.log(list.remove(-1));
-// console.log(list.remove(100));
-// console.log(list.remove(0));
-// console.log(list.remove(2));
-// console.log(list.remove(3));
-// list.print();
+console.log('>>> shift');
+list.shift();
+list.print();
+
+console.log('>>> unshift');
+list.unshift('Hello');
+list.print();
+
+console.log('>>> get');
+console.log(list.get(2));
+list.print();
+
+console.log('>>> set');
+console.log(list.set(2, 'Au revoir'));
+list.print();
+
+console.log('>>> insert');
+console.log(list.insert(2, 'Au revoir'));
+list.print();
+
+console.log('>>> remove');
+console.log(list.remove(2));
+list.print();
 
 console.log('>>> reverse');
 list.reverse();
