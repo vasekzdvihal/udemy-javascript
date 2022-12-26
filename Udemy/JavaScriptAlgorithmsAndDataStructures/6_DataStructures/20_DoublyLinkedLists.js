@@ -7,6 +7,20 @@
 // It allows us to traverse the list in both directions!
 // It takes more memory than Singly Linked Lists
 
+// -------------------
+// Big O of Doubly Linked Lists
+// Insertion - O(1)
+// Removal - O(1)
+// Searching - O(n) (technically O(n/2), but it's still O(n))
+// Access - O(n)
+
+// Recap
+// Doubly Linked Lists are almost identical to Singly Linked Lists, except every node has another pointer, to the previous node!
+// It also has an extra pointer, to the previous node!
+// It allows us to traverse the list in both directions!
+// It takes more memory than Singly Linked Lists
+
+
 class Node {
   constructor(val) {
     this.val = val;
