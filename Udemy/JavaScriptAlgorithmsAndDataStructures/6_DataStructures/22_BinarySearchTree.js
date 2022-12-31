@@ -37,5 +37,18 @@
 // Every node to the left of a parent node is always less than the parent
 // Every node to the right of a parent node is always greater than the parent
 
+class Node {
+  constructor(val) {
+    this.val = val;
+    this.left = null;
+    this.right = null;
+  }
+}
 
+class BinarySearchTree {
+  constructor() {
+    this.root = null;
+  }
+}
 
+const tree = new BinarySearchTree();
