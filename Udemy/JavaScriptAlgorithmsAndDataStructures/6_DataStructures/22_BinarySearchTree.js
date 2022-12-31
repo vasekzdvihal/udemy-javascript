@@ -94,6 +94,40 @@ class BinarySearchTree {
       }
     }
   }
+
+  // FINDING A NODE IN A BST
+  // This function should accept a value
+  // Starting at the root
+  //  Check if there is a root, if not - we're done searching!
+  //  If there is a root, check if the value of the new node is the value we are looking for. If we found it, we're done!
+  //  If not, check to see if the value is greater than or less than the value of the root
+  //  If it is greater
+  //    Check to see if there is a node to the right
+  //      If there is, move to that node and repeat these steps
+  //      If there is not, we're done searching!
+  //  If it is less
+  //    Check to see if there is a node to the left
+  //      If there is, move to that node and repeat these steps
+  //      If there is not, we're done searching!
+  find(val) {
+    if (!this.root) return undefined;
+
+    let current = this.root;
+    let found = false;
+
+    while (current && !found) {
+      if (val < current.val) {
+        current = current.left;
+      } else if (val > current.val) {
+        current = current.right;
+      } else {
+        found = true;
+      }
+    }
+
+    if (!found) return undefined;
+    return current;
+  }
 }
 
 const tree = new BinarySearchTree();
@@ -106,4 +140,10 @@ tree.insert(11);
 tree.insert(2);
 tree.insert(16);
 console.log(tree);
+
+console.log('>>> find');
+console.log(tree.find(2));
+console.log(tree.find(11));
+console.log(tree.find(13));
+console.log(tree.find(16));
 
