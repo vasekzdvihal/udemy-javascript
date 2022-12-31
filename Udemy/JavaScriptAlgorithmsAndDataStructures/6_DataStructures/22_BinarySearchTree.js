@@ -37,6 +37,11 @@
 // Every node to the left of a parent node is always less than the parent
 // Every node to the right of a parent node is always greater than the parent
 
+// Big O of BST
+// Insertion - O(log n)
+// Searching - O(log n)
+// NOT guaranteed, but on average
+
 class Node {
   constructor(val) {
     this.val = val;
