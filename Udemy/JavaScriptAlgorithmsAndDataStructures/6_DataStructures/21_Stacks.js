@@ -12,6 +12,18 @@
 
 // There are more than one way to implement a stack
 
+// Big O of Stacks
+// Insertion - O(1)
+// Removal - O(1)
+// Searching - O(n)
+// Access - O(n)
+
+// Recap
+// Stacks are a LIFO data structure where the last value in is always the first to be removed
+// We can use an array or a linked list to implement a stack, but we want to use a linked list because of the constant time insertion and removal
+
+
+
 // Using an ARRAY
 // We can use the push and pop methods or unshift and shift methods to implement a stack
 // const stack = [];
