@@ -10,6 +10,17 @@
 // Uploading resources
 // Printing / Task processing
 
+// Big O of Queues
+// Insertion - O(1)
+// Removal - O(1)
+// Searching - O(n)
+// Access - O(n)
+
+// Recap
+// Queues are a FIFO data structure where the first element added to the queue will be the first one removed
+// We can use an array or a linked list to implement a queue, but we want to use a linked list because of the constant time insertion and removal
+
+
 // There are more than one way to implement a queue
 // Using ARRAY
 // The push and shift methods or the unshift and pop methods
