@@ -95,6 +95,29 @@ class BinarySearchTree {
     }
     return data;
   }
+
+  // Depth-first search - Pre-order
+  // - Create a variable to store the values of nodes visited
+  // - Store the root of the BST in a variable called current
+  // - Write a helper function which accepts a node
+  //   - Push the value of the node to the variable that stores the values
+  //   - If the node has a left property, call the helper function with the left property on the node
+  //   - If the node has a right property, call the helper function with the right property on the node
+  // - Invoke the helper function with the current variable
+  // - Return the array of values
+  DFSPreOrder() {
+    const data = [];
+    const current = this.root;
+
+    function traverse(node) {
+      data.push(node.val);
+      if (node.left) traverse(node.left);
+      if (node.right) traverse(node.right);
+    }
+
+    traverse(current);
+    return data;
+  }
 }
 
 const tree = new BinarySearchTree();
@@ -105,5 +128,6 @@ tree.insert(3);
 tree.insert(8);
 tree.insert(20);
 
-console.log(tree.BFS());
+console.log(tree.BFS()); // [10, 6, 15, 3, 8, 20]
+console.log(tree.DFSPreOrder()); // [10, 6, 3, 8, 15, 20]
 console.log();
