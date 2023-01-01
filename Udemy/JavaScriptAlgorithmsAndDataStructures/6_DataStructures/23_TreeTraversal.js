@@ -7,6 +7,40 @@
 // 2. Depth-first search - Pre-order
 // 3. Depth-first search - Post-order
 
+// Which one to use?
+// It depends on what you are trying to do with the tree
+
+// Breadth-first search
+// --------------------
+// Visit every node on the same level before going to the next level
+// It's like a line at a theme park
+// It's also called level-order traversal
+
+// Depth-first search
+// ------------------
+// Visit every node on the same level before going to the next level
+// It's like a line at a theme park
+// It's also called level-order traversal
+
+// Depth-first search - Pre-order
+// ------------------------------
+// Visit the root node first, then the left child, then the right child
+// It's like a line at a theme park
+// It's also called level-order traversal
+
+// Depth-first search - Post-order
+// -------------------------------
+// Visit the root node first, then the left child, then the right child
+// It's like a line at a theme park
+// It's also called level-order traversal
+
+// Recap
+// Trees are non-linear data structures that contain a root and child nodes
+// Binary Search Trees are a type of tree that have at most two children per node
+// Binary Search Trees are a more specific type of binary tree where the left child is always less than the parent and the right child is always greater than the parent
+// We can search through a BST and DFS
+
+
 class Node {
   constructor(val) {
     this.val = val;
