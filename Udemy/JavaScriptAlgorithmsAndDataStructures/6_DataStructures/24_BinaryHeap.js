@@ -60,7 +60,7 @@ class MaxBinaryHeap {
   }
 
   bubbleUp() {
-    let idx = this.values.lenght - 1;
+    let idx = this.values.length - 1;
     const element = this.values[idx]
 
     while (idx > 0) {
