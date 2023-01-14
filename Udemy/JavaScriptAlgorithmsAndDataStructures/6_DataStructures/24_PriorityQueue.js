@@ -6,10 +6,17 @@
 // A data structure where each element has a priority. Elements with higher priorities are served before elements with lower priorities
 
 // Our priority queue
+// We use a BinaryHeap (from 24_PriorityQueue.js) to implement a priority queue and change to MIN Binary Heap
 // Write a Min Binary Heap - lower number means higher priority
 // Each node has a val and a priority. Use the priority to build the heap
 // Enqueue method accepts a value and priority, makes a new node, and puts it in the right spot based off of its priority
 // Dequeue method removes root element, returns it, and rearranges heap using priority
+
+// Big O of Priority Queue
+// Insertion - O(log n)
+// Removal - O(log n)
+// Searching - O(n)
+
 
 class Node {
   constructor(val, priority) {
