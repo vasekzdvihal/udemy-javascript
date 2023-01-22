@@ -43,18 +43,6 @@
 // Doesn't cluster outputs at specific indices, but distributes uniformly
 // Deterministic (same input yields same output)
 
-function hash(key, arrayLen) {
-  let total = 0;
-  let WEIRD_PRIME = 31;
-  for (let i = 0; i < Math.min(key.lenght, 100); i++) {
-    let char = key[i];
-    // map "a" to 1, "b" to 2, "c" to 3, etc.
-    let value = char.charCodeAt(0) - 96;
-    total = (total * WEIRD_PRIME + value) % arrayLen;
-  }
-  return total;
-}
-
 // Dealing with collisions
 // What if we have two keys that map to the same index?
 // There are many strategies for dealing with this problem
@@ -68,3 +56,66 @@ function hash(key, arrayLen) {
 // Linear probing
 // With linear probing, when we find a collision, we search through the array to find the next empty slot
 // Unlike with separate chaining, this allows us to store a single key-value at each index
+
+class HashTable {
+  constructor(size=53) {
+    this.keyMap = new Array(size);
+  }
+
+  _hash(key) {
+    let total = 0;
+    let WEIRD_PRIME = 31;
+    for (let i = 0; i < Math.min(key.length, 100); i++) {
+      let char = key[i];
+      // map "a" to 1, "b" to 2, "c" to 3, etc.
+      let value = char.charCodeAt(0) - 96;
+      total = (total * WEIRD_PRIME + value) % this.keyMap.length;
+    }
+    return total;
+  }
+
+  // SET
+  // Accepts a key and a value
+  // Hashes the key
+  // Stores the key-value pair in the hash table array via separate chaining
+  set(key, value) {
+    let index = this._hash(key);
+    if (!this.keyMap[index]){
+      this.keyMap[index] = [];
+    }
+    this.keyMap[index].push([key, value]);
+  }
+
+  // GET
+  // Accepts a key
+  // Hashes the key
+  // Retrieves the key-value pair in the hash table
+  // If the key isn't found, returns undefined
+  get(key) {
+    let index = this._hash(key);
+    if (this.keyMap[index]) {
+      for (let i = 0; i < this.keyMap[index].length; i++) {
+        if (this.keyMap[index][i][0] === key) {
+          return this.keyMap[index][i][1];
+        }
+      }
+    }
+    return undefined;
+  }
+}
+
+let ht = new HashTable(17);
+ht.set("maroon", "#800000");
+ht.set("yellow", "#FFFF00");
+ht.set("olive", "#808000");
+ht.set("salmon", "#FA8072");
+ht.set("lightcoral", "#F08080");
+ht.set("mediumvioletred", "#C71585");
+ht.set("plum", "#DDA0DD");
+ht.set("purple", "#DDA0DD");
+console.log(ht);
+
+console.log(ht.get("maroon"));
+console.log(ht.get("yellow"));
+console.log(ht.get("olive"));
+console.log(ht.get("nonexistent"));
