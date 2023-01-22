@@ -57,6 +57,20 @@
 // With linear probing, when we find a collision, we search through the array to find the next empty slot
 // Unlike with separate chaining, this allows us to store a single key-value at each index
 
+// BIG O of Hash Tables
+// Insertion - O(1)
+// Deletion - O(1)
+// Access - O(1)
+
+// Recap
+// Hash tables are collections of key-value pairs
+// They can find values quickly given a key
+// They can add new key-values quickly
+// They store data in a large array, and work by hashing the keys
+// A good hash should be fast, distribute keys uniformly, and be deterministic
+// Separate chaining and linear probing are two strategies used to deal with two keys that hash to the same index
+
+
 class HashTable {
   constructor(size=53) {
     this.keyMap = new Array(size);
