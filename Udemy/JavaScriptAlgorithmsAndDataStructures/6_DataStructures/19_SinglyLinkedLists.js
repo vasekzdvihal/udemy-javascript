@@ -45,7 +45,7 @@ class SinglyLinkedList {
   constructor() {
     this.head = null;
     this.tail = null;
-    this.lenght = 0;
+    this.length = 0;
   }
 
   print() {
@@ -75,7 +75,7 @@ class SinglyLinkedList {
       this.tail.next = newNode;
       this.tail = newNode;
     }
-    this.lenght++;
+    this.length++;
     return this;
   }
 
@@ -98,9 +98,9 @@ class SinglyLinkedList {
 
     this.tail = newTail;
     this.tail.next = null;
-    this.lenght--;
+    this.length--;
 
-    if (this.lenght === 0) {
+    if (this.length === 0) {
       this.head = null;
       this.tail = null;
     }
@@ -119,9 +119,9 @@ class SinglyLinkedList {
 
     const currentHead = this.head;
     this.head = currentHead.next;
-    this.lenght--;
+    this.length--;
 
-    if (this.lenght === 0) {
+    if (this.length === 0) {
       this.tail = null;
     }
 
@@ -147,7 +147,7 @@ class SinglyLinkedList {
       this.head = newNode;
     }
 
-    this.lenght++;
+    this.length++;
     return this;
   }
 
@@ -156,7 +156,7 @@ class SinglyLinkedList {
   // If the index is less than zero or greater than or equal to the length of the list, return null
   // Loop through the list until you reach the index and return the node at that specific index
   get(index) {
-    if (index < 0 || index >= this.lenght) return null;
+    if (index < 0 || index >= this.length) return null;
 
     let counter = 0;
     let current = this.head;
@@ -191,8 +191,8 @@ class SinglyLinkedList {
   // Increment the length
   // Return true
   insert(index, val) {
-    if (index < 0 || index > this.lenght) return false;
-    if (index === this.lenght) return !!this.push(val);
+    if (index < 0 || index > this.length) return false;
+    if (index === this.length) return !!this.push(val);
     if (index === 0) return !!this.unshift(val);
 
     let newNode = new Node(val);
@@ -200,7 +200,7 @@ class SinglyLinkedList {
     let temp = prev.next;
     prev.next = newNode;
     newNode.next = temp;
-    this.lenght++;
+    this.length++;
     return true;
   }
 
@@ -213,14 +213,14 @@ class SinglyLinkedList {
   // Decrement the length
   // Return the value of the node removed
   remove(index) {
-    if (index < 0 || index >= this.lenght) return undefined;
+    if (index < 0 || index >= this.length) return undefined;
     if (index === 0) return this.shift();
-    if (index === this.lenght - 1) return this.pop();
+    if (index === this.length - 1) return this.pop();
 
     let prevNode = this.get(index - 1);
     let removed = prevNode.next;
     prevNode.next = removed.next;
-    this.lenght--;
+    this.length--;
     return removed;
   }
 
@@ -242,7 +242,7 @@ class SinglyLinkedList {
     let next;
     let prev = null;
 
-    for (let i = 0; i < this.lenght; i++) {
+    for (let i = 0; i < this.length; i++) {
       next = node.next;
       node.next = prev;
 

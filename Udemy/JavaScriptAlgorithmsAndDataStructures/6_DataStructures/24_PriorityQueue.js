@@ -17,6 +17,11 @@
 // Removal - O(log n)
 // Searching - O(n)
 
+// Recap
+// Priority Queues are a data structure where each element has a priority. Elements with higher priorities are served before elements with lower priorities
+// We can implement a priority queue with a min binary heap
+// The higher the priority, the lower the number
+
 
 class Node {
   constructor(val, priority) {
