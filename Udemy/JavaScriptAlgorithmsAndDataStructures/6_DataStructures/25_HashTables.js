@@ -29,4 +29,26 @@
 // orangered -> "#ff4500"
 //
 // colors["tomato"] is way better than colors[2]
+// How can we get human-readability and computer readability?
+// Computers don't know how to find an element at index tomato!
 
+// The HASH part
+//  The implement a has table, we'll be using an array.
+// In order to look up values by key, we need a way to convert keys into valid array indices
+// A function that performs this task is called a hash function
+
+// What makes a good hash?
+// (not a cryptographically secure one)
+// Fast (i.e. constant time)
+// Doesn't cluster outputs at specific indices, but distributes uniformly
+// Deterministic (same input yields same output)
+
+function hash(key, arrayLen) {
+  let total = 0;
+  for (let char of key) {
+    // map "a" to 1, "b" to 2, "c" to 3, etc.
+    let value = char.charCodeAt(0) - 96;
+    total = (total + value) % arrayLen;
+  }
+  return total;
+}
