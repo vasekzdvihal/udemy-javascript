@@ -45,10 +45,26 @@
 
 function hash(key, arrayLen) {
   let total = 0;
-  for (let char of key) {
+  let WEIRD_PRIME = 31;
+  for (let i = 0; i < Math.min(key.lenght, 100); i++) {
+    let char = key[i];
     // map "a" to 1, "b" to 2, "c" to 3, etc.
     let value = char.charCodeAt(0) - 96;
-    total = (total + value) % arrayLen;
+    total = (total * WEIRD_PRIME + value) % arrayLen;
   }
   return total;
 }
+
+// Dealing with collisions
+// What if we have two keys that map to the same index?
+// There are many strategies for dealing with this problem
+// 1. Separate chaining
+// 2. Linear probing
+
+// Separate chaining
+// With separate chaining, at each index in our array we store values using a more sophisticated data structure (e.g. an array or a linked list)
+// This allows us to store multiple key-value pairs at the same index
+
+// Linear probing
+// With linear probing, when we find a collision, we search through the array to find the next empty slot
+// Unlike with separate chaining, this allows us to store a single key-value at each index
