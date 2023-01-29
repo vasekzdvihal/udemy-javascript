@@ -77,3 +77,37 @@
 // | Storage       | O(|V| + |E|)   | O(|V^2|)         |
 // -----------------------------------------------------
 
+class Graph {
+  constructor() {
+    this.adjacencyList = {};
+  }
+
+  // Add a vertex to the graph
+  // This function should accept a name of a vertex
+  // It should add a key to the adjacency list with the name of the vertex and set its value to be an empty array
+  addVertex(vertex) {
+    if (!this.adjacencyList[vertex]) this.adjacencyList[vertex] = [];
+  }
+
+  // Add an edge between two vertices
+  // This function should accept two vertices, we can call them vertex1 and vertex2
+  // The function should find in the adjacency list the key of vertex1 and push vertex2 to the array
+  // The function should find in the adjacency list the key of vertex2 and push vertex1 to the array
+  // Don't worry about handling errors/invalid vertices
+  addEdge(vertex1, vertex2) {
+    this.adjacencyList[vertex1].push(vertex2);
+    this.adjacencyList[vertex2].push(vertex1);
+  }
+}
+
+const graph = new Graph();
+console.log('Add vertex')
+graph.addVertex("Tokyo");
+graph.addVertex("Dallas");
+graph.addVertex("Aspen");
+console.log(graph);
+
+console.log('Add edge')
+graph.addEdge("Tokyo", "Dallas");
+graph.addEdge("Tokyo", "Aspen");
+console.log(graph);
