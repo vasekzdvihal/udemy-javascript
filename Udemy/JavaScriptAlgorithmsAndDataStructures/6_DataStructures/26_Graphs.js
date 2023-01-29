@@ -98,6 +98,33 @@ class Graph {
     this.adjacencyList[vertex1].push(vertex2);
     this.adjacencyList[vertex2].push(vertex1);
   }
+
+  // Remove an edge between two vertices
+  // This function should accept two vertices, we'll call them vertex1 and vertex2
+  // The function should reassign the key of vertex1 to be an array that does not contain vertex2
+  // The function should reassign the key of vertex2 to be an array that does not contain vertex1
+  // Don't worry about handling errors/invalid vertices
+  removeEdge(vertex1, vertex2) {
+    this.adjacencyList[vertex1] = this.adjacencyList[vertex1].filter(
+      v => v !== vertex2
+    );
+    this.adjacencyList[vertex2] = this.adjacencyList[vertex2].filter(
+      v => v !== vertex1
+    );
+  }
+
+  // Remove a vertex
+  // The function should accept a vertex to remove
+  // The function should loop as long as there are any other vertices in the adjacency list for that vertex
+  // Inside the loop, call our removeEdge function with the vertex we are removing and any values in the adjacency list for that vertex
+  // Delete the key in the adjacency list for that vertex
+  removeVertex(vertex) {
+    while (this.adjacencyList[vertex].length) {
+      const adjacentVertex = this.adjacencyList[vertex].pop();
+      this.removeEdge(vertex, adjacentVertex);
+    }
+    delete this.adjacencyList[vertex];
+  }
 }
 
 const graph = new Graph();
@@ -110,4 +137,12 @@ console.log(graph);
 console.log('Add edge')
 graph.addEdge("Tokyo", "Dallas");
 graph.addEdge("Tokyo", "Aspen");
+console.log(graph);
+
+console.log('Remove edge')
+graph.removeEdge("Tokyo", "Aspen");
+console.log(graph);
+
+console.log('Remove vertex')
+graph.removeVertex("Tokyo");
 console.log(graph);
