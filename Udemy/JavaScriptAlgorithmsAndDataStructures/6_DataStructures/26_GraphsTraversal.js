@@ -17,6 +17,10 @@
 // - Visit the children of a node before visiting the siblings
 // - Use a stack or recursion to keep track of nodes
 
+// Breadth First Search (BFS)
+// - Visit every node once
+// - Visit the siblings of a node before visiting the children
+// - Use a queue to keep track of nodes
 
 class Graph {
   constructor() {
@@ -110,6 +114,39 @@ class Graph {
 
     return result;
   }
+
+  // BFS Pseudocode
+  // - This function should accept a starting vertex
+  // - Create a queue (you can use an array) and place the starting vertex in it
+  // - Create an array to store the nodes visited
+  // - Create an object to store nodes visited
+  // - Mark the starting vertex as visited
+  // - Loop as long as there is anything in the queue
+  //   - Remove the first vertex from the queue and push it into the array that stores nodes visited
+  //   - Loop over each vertex in the adjacency list for the vertex you are visiting
+  //     - If it is not inside the object that stores nodes visited, mark it as visited and enqueue that vertex
+  // - Return the array of visited nodes
+  breadthFirst(start) {
+    const queue = [start];
+    const result = [];
+    const visited = {};
+    let currentVertex;
+
+    visited[start] = true;
+    while (queue.length) {
+      currentVertex = queue.shift();
+      result.push(currentVertex);
+
+      this.adjacencyList[currentVertex].forEach(neighbor => {
+        if (!visited[neighbor]) {
+          visited[neighbor] = true;
+          queue.push(neighbor);
+        }
+      });
+    }
+
+    return result;
+  }
 }
 
 const graph = new Graph();
@@ -131,4 +168,6 @@ console.log('depthFirstRecursive("Tokyo")');
 console.log(graph.depthFirstRecursive("Tokyo"));
 console.log('depthFirstIterative("Tokyo")');
 console.log(graph.depthFirstIterative("Tokyo"));
+console.log('breadthFirst("Tokyo")');
+console.log(graph.breadthFirst("Tokyo"));
 
