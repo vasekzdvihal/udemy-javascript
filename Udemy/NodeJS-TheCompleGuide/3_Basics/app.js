@@ -20,7 +20,11 @@ const server = http.createServer((req, res) => {
   if (url === '/') {
     res.write('<html lang="en">');
     res.write('<head><title>My first page</title></head>');
-    res.write('<body><form action="/message" method="POST"><input type="text" name="message"><button type="submit">Send</button></form></body>');
+    res.write('<body>');
+    res.write(' <form action="/message" method="POST">')
+    res.write('  <input type="text" name="message"><button type="submit">Send</button>')
+    res.write(' </form>')
+    res.write('</body>');
     res.write('</html>');
     return res.end();
   }
