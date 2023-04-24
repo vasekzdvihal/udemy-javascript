@@ -8,5 +8,8 @@
     "start": "node app.js"
   },
   "author": "Maximilian Schwarzmüller",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
 }
