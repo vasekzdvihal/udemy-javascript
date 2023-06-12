@@ -15,7 +15,7 @@ app.use('/add-product', (req, res,next) => {
   // We don't call next() here because we don't want to continue to the next middleware
 });
 
-app.use('/product', (req, res, next) => {
+app.post('/product', (req, res, next) => {
   console.log(req.body);
   res.redirect('/');
 });
