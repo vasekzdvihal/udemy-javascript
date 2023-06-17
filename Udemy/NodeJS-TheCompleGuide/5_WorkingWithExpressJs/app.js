@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const path = require('path');
 
 const app = express();
 
@@ -12,7 +13,7 @@ app.use('/admin', adminRoutes);
 app.use(shopRoutes);
 
 app.use((req, res, next) => {
-  res.status(404).send('<h1>Page not found</h1>'); // Send error 404 page not found
+  res.status(404).sendFile(path.join(__dirname, 'views', '404.html')); // Send error 404 page not found
 });
 
 app.listen(3000); // Starts a server on port 3000 => http://localhost:3000/
