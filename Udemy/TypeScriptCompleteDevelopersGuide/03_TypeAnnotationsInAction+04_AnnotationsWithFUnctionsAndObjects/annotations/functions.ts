@@ -25,3 +25,28 @@ const throwError = (message: string): never => { // corner case, rarely used
     throw new Error(message);
 }
 
+// Destructing with Annotations
+const forecast = {
+    date: new Date(),
+    weather: 'sunny'
+}
+
+const logWeather = (forecast: {date: Date, weather: string}): void => {
+    console.log(forecast.date);
+    console.log(forecast.weather);
+}
+
+logWeather(forecast);
+
+// ES2015
+// const logWeather = ({ date, weather }) => {
+//     console.log(date);
+//     console.log(weather);
+// }
+
+const logWeather2015 = ({ date, weather }: {date: Date, weather: string}): void => {
+    console.log(date);
+    console.log(weather);
+}
+
+logWeather2015(forecast);
