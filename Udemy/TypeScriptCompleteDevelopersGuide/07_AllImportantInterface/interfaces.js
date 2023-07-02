@@ -1,11 +1,12 @@
 var oldCivic = {
     name: 'civic',
-    year: 2000,
+    year: new Date(),
     broken: true,
+    summary: function () {
+        return "Name: ".concat(this.name, ", Year: ").concat(this.year, ", Broken: ").concat(this.broken);
+    }
 };
 var printVehicle = function (vehicle) {
-    console.log("Name: ".concat(vehicle.name));
-    console.log("Year: ".concat(vehicle.year));
-    console.log("Broken: ".concat(vehicle.broken));
+    console.log(vehicle.summary());
 };
 printVehicle(oldCivic);
