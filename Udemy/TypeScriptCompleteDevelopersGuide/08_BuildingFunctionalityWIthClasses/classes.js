@@ -15,6 +15,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 var Vehicle = /** @class */ (function () {
     function Vehicle() {
+        this.color = 'red';
     }
     Vehicle.prototype.drive = function () {
         console.log('chugga chugga');
@@ -32,11 +33,15 @@ var Car = /** @class */ (function (_super) {
     Car.prototype.drive = function () {
         console.log('vroom');
     };
+    Car.prototype.startDrivingProcess = function () {
+        this.drive();
+        this.honk();
+    };
     return Car;
 }(Vehicle));
 var vehicle = new Vehicle();
-var car = new Car();
 vehicle.drive();
-vehicle.honk();
-car.drive();
-car.honk();
+console.log(vehicle.color);
+var car = new Car();
+car.startDrivingProcess();
+// car.honk(); // error: Property 'honk' is protected and only accessible within class 'Vehicle' and its subclasses.ts(2445)
