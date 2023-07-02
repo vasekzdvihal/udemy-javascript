@@ -26,3 +26,7 @@ const printSummary = (item: Reportable) : void => {
 
 printSummary(oldCivic);
 printSummary(drink);
+
+// General strategy for reusable code in TS
+// 1. Create functions that accept arguments that are typed with interfaces
+// 2. Objects/classes can decide to 'implement' a given interface to work with a function
