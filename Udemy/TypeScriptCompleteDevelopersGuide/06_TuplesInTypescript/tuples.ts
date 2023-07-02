@@ -13,3 +13,11 @@ type Drink = [string, boolean, number];
 const pepsi3: Drink = ['brown', true, 40];
 
 const sugarOfPepsi3 = pepsi3[2]; // This is not clear what this number represents. It is better to use an object instead of a tuple.
+
+// Why tuples are not used often?
+const carSpecs: [number, number] = [400, 3354]; // This is not clear what each number represents. It is better to use an object instead of a tuple.
+
+const carStats = {
+    horsepower: 400,
+    weight: 3354
+}
