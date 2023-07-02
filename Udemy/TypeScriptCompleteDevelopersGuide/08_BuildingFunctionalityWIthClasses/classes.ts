@@ -1,20 +1,19 @@
 class Vehicle {
-    color: string; // can be public, private, or protected
-
-    constructor(color: string) {
-        this.color = color;
-    }
-
-    public drive() : void {
-        console.log('chugga chugga');
-    }
+    constructor(public color: string) {}
 
     protected honk() : void {
         console.log('beep');
     }
 }
 
+const vehicle = new Vehicle('orange');
+console.log(vehicle.color);
+
 class Car extends Vehicle {
+    constructor(public wheels: number, color: string) {
+        super(color);
+    }
+
     drive() : void {
         console.log('vroom');
     }
@@ -25,10 +24,5 @@ class Car extends Vehicle {
     }
 }
 
-const vehicle = new Vehicle('orange');
-vehicle.drive();
-console.log(vehicle.color);
-
-const car = new Car('red');
+const car = new Car(35, 'lime');
 car.startDrivingProcess();
-// car.honk(); // error: Property 'honk' is protected and only accessible within class 'Vehicle' and its subclasses.ts(2445)
