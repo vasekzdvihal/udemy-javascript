@@ -1,1 +1,5 @@
-console.log('Design Patterns with Typescript');
+import { User } from './User';
+
+const user = new User();
+
+console.log(user);
