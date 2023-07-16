@@ -4,4 +4,4 @@ function test(msg: string) {
     console.log(msg);
 }
 
-test('Hello World');
+test('Msg from test function');
