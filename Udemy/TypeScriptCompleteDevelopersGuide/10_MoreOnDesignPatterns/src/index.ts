@@ -1,7 +1,15 @@
-console.log('Hello World');
+class Sorter {
+    collection: number[];
 
-function test(msg: string) {
-    console.log(msg);
+    constructor(collection: number[]) {
+        this.collection = collection;
+    }
+
+    sort(): void {
+
+    }
 }
 
-test('Msg from test function');
+const sorter = new Sorter([10, 3, -5, 0]);
+sorter.sort();
+console.log(sorter.collection);
