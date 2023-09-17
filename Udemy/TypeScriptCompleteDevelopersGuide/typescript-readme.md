@@ -12,3 +12,34 @@ To build the app and run the development server, simply run the following comman
 ```terminal
     npx parcel index.html
 ```
+
+### Project setup
+
+TSC Config
+```terminal
+    tsc --init
+```
+Creates new tsconfig.json file, where we can configure our typescript compiler.
+For example, we can set source and destination folders for output
+    
+    ```json
+        "outDir": "./dist",
+        "rootDir": "./src",
+    ```
+
+Then init npm package
+```terminal
+    npm init -y
+```
+Install concurrently and nodemon
+```terminal
+    npm install --save-dev concurrently nodemon
+```
+Add scripts to package.json
+```
+    "scripts": {
+        "start:build": "tsc -w",
+        "start:run": "nodemon build/index.js",
+        "start": "concurrently npm:start:*"
+    },
+```
