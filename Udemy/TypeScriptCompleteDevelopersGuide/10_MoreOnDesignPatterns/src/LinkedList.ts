@@ -1,3 +1,5 @@
+import {Sorter} from "./Sorter";
+
 class MyNode {
   next: MyNode | null = null;
 
@@ -6,7 +8,7 @@ class MyNode {
 
 }
 
-export class MyLinkedList {
+export class MyLinkedList extends Sorter {
   head: MyNode | null = null;
 
   add(data: number): void {
