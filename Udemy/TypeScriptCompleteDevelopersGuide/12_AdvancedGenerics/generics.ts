@@ -23,3 +23,23 @@ class ArrayOfAnything<T> {
 }
 
 const strings = new ArrayOfAnything<string>(['a', 'b', 'c']);
+
+// Example of generics with functions
+
+function printStrings(arr: string[]) {
+  for (let i = 0; i < arr.length; i++) {
+    console.log(arr[i]);
+  }
+}
+
+function printNumbers(arr: number[]) {
+  for (let i = 0; i < arr.length; i++) {
+    console.log(arr[i]);
+  }
+}
+
+function printAnything<T>(arr: T[]): void {
+  for (let i = 0; i < arr.length; i++) {
+    console.log(arr[i]);
+  }
+}
