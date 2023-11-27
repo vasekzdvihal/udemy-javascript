@@ -5,3 +5,12 @@ node_modules/
 
 dist/
 .parcel-cache/
+.idea/codeStyles/codeStyleConfig.xml
+.idea/git_toolbox_prj.xml
+.idea/inspectionProfiles/Project_Default.xml
+.idea/jsLibraryMappings.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/udemy-javascript.iml
+.idea/vcs.xml
+.idea/workspace.xml
