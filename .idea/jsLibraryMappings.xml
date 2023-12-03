@@ -3,7 +3,6 @@
   <component name="JavaScriptLibraryMappings">
     <includedPredefinedLibrary name="Node.js Core" />
     <excludedPredefinedLibrary name="HTML" />
-    <excludedPredefinedLibrary name="udemy-javascript/Playgrounds/QuasarPlayground/node_modules" />
     <excludedPredefinedLibrary name="udemy-javascript/Udemy/JavaScriptWjQuery-CompleteCourse/Node/RSonsWebsite/node_modules" />
   </component>
 </project>
