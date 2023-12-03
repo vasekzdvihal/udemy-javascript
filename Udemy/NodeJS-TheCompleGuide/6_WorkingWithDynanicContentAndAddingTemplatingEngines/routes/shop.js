@@ -7,7 +7,8 @@ const adminData = require('./admin');
 
 router.get('/', (req, res, next) => {
   console.log(adminData.products);
-  res.render('shop'); // Renders a template with the given template engine
+  const products = adminData.products;
+  res.render('shop', { prods: products, docTitle: "Shop" }); // Renders a template with the given template engine
 });
 
 module.exports = router;
