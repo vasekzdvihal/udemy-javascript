@@ -1,11 +1,17 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
+const expressHbs = require('express-handlebars');
 
 const app = express();
 
-app.set("view engine", "pug");
-app.set("views", "views");
+// PUG (pug is default template engine)
+// app.set("view engine", "pug");
+
+// Handlebars
+app.engine('hbs', expressHbs());
+app.set('view engine', 'hbs');
+app.set('views', 'views');
 
 const adminRoutes = require('./routes/admin');
 const shopRoutes = require('./routes/shop');
