@@ -1,14 +1,17 @@
 import { Eventing } from "./Eventing";
+import { HasId, Sync } from "./Sync";
 
-export interface UserProps {
+export interface UserProps extends HasId {
   id?: number,
   name?: string,
   age?: number,
 }
 
+const rootUrl = 'http://localhost:3000/users'
 
 export class User {
   public events: Eventing = new Eventing();
+  public sync: Sync<UserProps> = new Sync<UserProps>(rootUrl);
 
   constructor(private data: UserProps) { }
 
