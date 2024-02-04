@@ -1,7 +1,7 @@
 import { Eventing } from "./Eventing";
 import { HasId, Sync } from "./Sync";
 
-export interface UserProps extends HasId {
+export interface UserProps {
   id?: number,
   name?: string,
   age?: number,
