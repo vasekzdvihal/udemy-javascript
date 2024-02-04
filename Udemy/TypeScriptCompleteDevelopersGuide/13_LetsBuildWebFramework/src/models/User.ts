@@ -1,4 +1,4 @@
-import {Eventing} from "./Eventing";
+import { Eventing } from "./Eventing";
 
 export interface UserProps {
   id?: number,
