@@ -19,9 +19,9 @@ import axios from 'axios';
 
 console.log('Hello from 13_LetsBuildWebFramework');
 
-axios.post('http://localhost:3000/users', {
-  name: 'myName',
-  age: 20,
-});
-
-axios.get('http://localhost:3000/users/1');
+// axios.post('http://localhost:3000/users', {
+//   name: 'myName',
+//   age: 20,
+// });
+//
+// axios.get('http://localhost:3000/users/1');
