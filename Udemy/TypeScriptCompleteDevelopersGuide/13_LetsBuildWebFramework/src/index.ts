@@ -1,16 +1,27 @@
-import { User } from './models/User';
+// import { User } from './models/User';
+//
+// const user = new User({name: "myName", age: 12 });
+//
+// user.on('change', () => {
+//   console.log('Change #1');
+// });
+// user.on('change', () => {
+//   console.log('Change #2');
+// });
+// user.on('save', () => {
+//   console.log('Save was triggered');
+// });
+//
+// user.trigger("change");
+// user.trigger("save");
 
-const user = new User({name: "myName", age: 12 });
+import axios from 'axios';
 
-user.on('change', () => {
-  console.log('Change #1');
-});
-user.on('change', () => {
-  console.log('Change #2');
-});
-user.on('save', () => {
-  console.log('Save was triggered');
+console.log('Hello from 13_LetsBuildWebFramework');
+
+axios.post('http://localhost:3000/users', {
+  name: 'myName',
+  age: 20,
 });
 
-user.trigger("change");
-user.trigger("save");
+axios.get('http://localhost:3000/users/1');
