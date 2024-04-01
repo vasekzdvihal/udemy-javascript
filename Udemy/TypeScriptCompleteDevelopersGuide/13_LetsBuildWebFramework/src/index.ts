@@ -5,6 +5,10 @@ console.log('Hello from 13_LetsBuildWebFramework');
 
 const user = new User({ name: 'brand new record', age: 2344234 });
 
+user.on('change', () => {
+  console.log('User was changed');
+});
+
 // A quick reminder on accessors
 // class Person {
 //   constructor(public firstName: string, public lastName: string) {}
