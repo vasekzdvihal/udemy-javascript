@@ -11,6 +11,13 @@ user.on('change', () => {
 
 user.fetch();
 
+user.on('save', () => {
+  console.log('saved', user);
+})
+
+user.set({ name: 'New name' });
+user.save();
+
 // A quick reminder on accessors
 // class Person {
 //   constructor(public firstName: string, public lastName: string) {}
