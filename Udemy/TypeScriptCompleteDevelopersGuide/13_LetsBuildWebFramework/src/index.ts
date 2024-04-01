@@ -11,7 +11,7 @@ user.on('change', () => {
   console.log('User was changed');
 });
 
-user.trigger('change');
+user.set({ name: 'New name' });
 
 // A quick reminder on accessors
 // class Person {
