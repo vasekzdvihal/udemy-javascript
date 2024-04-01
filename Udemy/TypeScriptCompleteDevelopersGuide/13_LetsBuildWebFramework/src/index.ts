@@ -5,9 +5,13 @@ console.log('Hello from 13_LetsBuildWebFramework');
 
 const user = new User({ name: 'brand new record', age: 2344234 });
 
+console.log(user.get('name'));
+
 user.on('change', () => {
   console.log('User was changed');
 });
+
+user.trigger('change');
 
 // A quick reminder on accessors
 // class Person {
@@ -20,3 +24,7 @@ user.on('change', () => {
 //
 // const person = new Person('Vasa', 'Sasa');
 // console.log(person.fullName);
+
+// Reminder on how 'this' works in JS
+// Rule of thumb: if you see a function being passed around as a callback,
+// it's going to lose its context
