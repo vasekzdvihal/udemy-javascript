@@ -3,20 +3,13 @@ import { User } from "./models/User";
 
 console.log('Hello from 13_LetsBuildWebFramework');
 
-const user = new User({ id: 1 });
+const user = User.buildUser({ id: 1 });
 
 user.on('change', () => {
-  console.log(user);
+  console.log (user);
 });
 
 user.fetch();
-
-user.on('save', () => {
-  console.log('saved', user);
-})
-
-user.set({ name: 'New name' });
-user.save();
 
 // A quick reminder on accessors
 // class Person {
