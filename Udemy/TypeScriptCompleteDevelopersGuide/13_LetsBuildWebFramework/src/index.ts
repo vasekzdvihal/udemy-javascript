@@ -1,11 +1,5 @@
-import { User } from "./models/User";
+import { UserForm } from "./views/UserForm";
 
-console.log('Hello from 13_LetsBuildWebFramework');
+const userForm = new UserForm(document.getElementById('root'));
 
-const collection = User.buildUserCollection();
-
-collection.on('change', () => {
-  console.log (collection);
-})
-
-collection.fetch();
+userForm.render();
