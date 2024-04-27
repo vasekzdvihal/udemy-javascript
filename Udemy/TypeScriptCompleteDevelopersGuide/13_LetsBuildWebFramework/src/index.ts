@@ -1,28 +1,11 @@
-import { User } from "./models/User";
-
+import { Collection } from "./models/Collection";
 
 console.log('Hello from 13_LetsBuildWebFramework');
 
-const user = User.buildUser({ id: 1 });
+const collection = new Collection('http://localhost:3000/users');
 
-user.on('change', () => {
-  console.log (user);
-});
+collection.on('change', () => {
+  console.log (collection);
+})
 
-user.fetch();
-
-// A quick reminder on accessors
-// class Person {
-//   constructor(public firstName: string, public lastName: string) {}
-//
-//   get fullName(): string { // get instead of function
-//     return `${this.firstName} ${this.lastName}`;
-//   }
-// }
-//
-// const person = new Person('Vasa', 'Sasa');
-// console.log(person.fullName);
-
-// Reminder on how 'this' works in JS
-// Rule of thumb: if you see a function being passed around as a callback,
-// it's going to lose its context
+collection.fetch();
