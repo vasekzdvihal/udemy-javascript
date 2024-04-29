@@ -57,6 +57,7 @@ export abstract class View<T extends Model<K>, K extends HasId> {
 
     this.bindEvents(templateElement.content);
     this.mapRegions(templateElement.content);
+    console.log (this.regions);
     this.parent.append(templateElement.content);
   }
 }
