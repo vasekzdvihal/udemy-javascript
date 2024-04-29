@@ -4,7 +4,7 @@ import { HasId } from "../models/ApiSync";
 export abstract class View<T extends Model<K>, K extends HasId> {
   regions: { [key: string]: Element } = {};
 
-  constructor (public parent: Element,public model: T) {
+  constructor (public parent: Element, public model: T) {
     this.bindModel();
   }
 
