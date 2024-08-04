@@ -54,4 +54,9 @@ router.get('/', (req: Request, res: Response) => {
   }
 });
 
+router.get('/logout', (req: Request, res: Response) => {
+  req.session = undefined; // reset session
+  res.redirect('/');
+});
+
 export { router };

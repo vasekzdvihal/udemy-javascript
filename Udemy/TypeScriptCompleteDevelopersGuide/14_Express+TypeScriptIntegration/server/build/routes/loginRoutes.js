@@ -49,3 +49,7 @@ router.get('/', (req, res) => {
     `);
     }
 });
+router.get('/logout', (req, res) => {
+    req.session = undefined; // reset session
+    res.redirect('/');
+});
