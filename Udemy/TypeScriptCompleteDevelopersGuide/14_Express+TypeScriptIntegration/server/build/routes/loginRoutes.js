@@ -2,6 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.router = void 0;
 const express_1 = require("express");
+const LOGIN_EMAIL = "hi@hi.com";
+const LOGIN_PASSWORD = "password";
 const router = (0, express_1.Router)();
 exports.router = router;
 router.get('/login', (req, res) => {
@@ -21,10 +23,11 @@ router.get('/login', (req, res) => {
 });
 router.post('/login', (req, res) => {
     const { email, password } = req.body;
-    if (email) {
-        res.send(email.toUpperCase());
+    if (email && password && email === LOGIN_EMAIL && password === LOGIN_PASSWORD) {
+        req.session = { loggedIn: true };
+        res.redirect('/');
     }
     else {
-        res.send('You must provide an email.');
+        res.send('Invalid email or password');
     }
 });

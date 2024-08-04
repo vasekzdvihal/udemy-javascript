@@ -4,6 +4,9 @@ interface RequestWithBody extends Request {
   body: { [key: string]: string | undefined }
 }
 
+const LOGIN_EMAIL = "hi@hi.com";
+const LOGIN_PASSWORD = "password";
+
 const router = Router();
 
 router.get('/login', (req: RequestWithBody, res: Response) => {
@@ -25,10 +28,11 @@ router.get('/login', (req: RequestWithBody, res: Response) => {
 router.post('/login', (req: RequestWithBody, res: Response) => {
   const { email, password } = req.body;
 
-  if (email) {
-    res.send(email.toUpperCase());
+  if (email && password && email === LOGIN_EMAIL && password === LOGIN_PASSWORD) {
+    req.session = { loggedIn: true };
+    res.redirect('/');
   } else {
-    res.send('You must provide an email.')
+    res.send('Invalid email or password')
   }
 });
 
