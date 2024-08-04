@@ -8,7 +8,7 @@ router.get('/login', (req, res) => {
     res.send(`
     <form method="POST">
       <div>
-        <label for="email">Email</label>
+        <label for="emails">Email</label>
         <input name="email">
       </div>
       <div>
@@ -21,5 +21,10 @@ router.get('/login', (req, res) => {
 });
 router.post('/login', (req, res) => {
     const { email, password } = req.body;
-    console.log(`Email: ${email}, password: ${password}`);
+    if (email) {
+        res.send(email.toUpperCase());
+    }
+    else {
+        res.send('You must provide an email.');
+    }
 });
