@@ -16,3 +16,5 @@ dist/
 .idea/workspace.xml
 
 .cache/
+
+.DS_Store
