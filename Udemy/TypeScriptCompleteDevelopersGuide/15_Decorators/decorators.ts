@@ -11,7 +11,7 @@ class Boat {
   }
 }
 
-function testDecorator(target: any, key: string): void {
+function testDecorator(target: any, key: string, desc: PropertyDescriptor): void {
   console.log('Target:', target);
   console.log ('Key:', key);
 }
