@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fixing a layout.</title>
+</head>
+<body>
+  <article class="article">
+    <div class="main-content">
+      <h1 class="title">Title goes here</h1>
+      <p>Lorem ipsum dolor, <a href="#">sit amet consectetur</a> adipisicing elit. Aliquid sapiente perferendis nulla sed consequuntur eveniet. Itaque veritatis qui labore quia odio nihil, magni soluta facilis necessitatibus cumque repellendus optio laborum.</p>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis labore sit dignissimos, veritatis ipsam excepturi voluptatibus voluptates voluptatem iure unde repellat esse rerum molestiae optio mollitia provident fugit numquam assumenda!</p>
+      <p>Quaerat doloremque itaque facere commodi, soluta officia impedit quis atque ea esse quasi corrupti reiciendis dignissimos molestias, autem possimus perferendis vel temporibus maxime ullam nam voluptates. Aspernatur corrupti dolor deleniti?</p>
+      <p>Labore tempora nam eveniet obcaecati molestiae explicabo numquam, corporis sequi reiciendis minus, facilis aut eos quis ipsum deserunt dolorem recusandae quaerat id eum! Deserunt omnis culpa quaerat quam totam delectus!</p>
+      <img src="https://unsplash.it/1200/400" alt="" class="main-content__img">
+      <p>Iusto et possimus nihil eum quod ab architecto officiis, debitis omnis error magnam? Deserunt voluptate explicabo natus eos reprehenderit itaque doloribus nobis ipsam, sint ab enim neque dolorum similique aliquam.</p>
+      <p>Totam ad praesentium aperiam? Nisi sapiente ipsum vel adipisci nesciunt amet autem, quasi, odio doloremque veritatis cum praesentium consectetur iure! Veritatis amet esse, nesciunt architecto provident nobis. Nobis, necessitatibus nihil.</p>
+      <p>Assumenda quo, ratione quibusdam accusamus officiis eaque commodi dicta quisquam dolores excepturi necessitatibus adipisci est corrupti minus? Quasi labore repudiandae quaerat, iure eos nulla perspiciatis provident, tenetur perferendis dolorem error.</p>
+    </div>
+    <aside class="sidebar">
+      <div class="widget author">
+        <h2 class="author__name">John Raymond</h2>
+        <img class="author__img" src="https://i.pravatar.cc/150?img=3" alt="">
+        <p class="author__info">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt, sint.</p>
+      </div>
+    </aside>
+  </article>
+</body>
+</html>
+
+<style>
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* + * {
+  margin-top: 1em;
+}
+
+:root {
+  --clr-primary: #ee6352;
+  --clr-body: #333;
+  --clr-bg: #ddd;
+}
+
+body {
+  font-family: basic-sans, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.125em;
+  line-height: 1.6;
+  color: var(--clr-body);
+  background: var(--clr-bg);
+}
+
+h1, h2, h4 { line-height: 1; }
+
+img {max-width: 100%; }
+
+.article {
+  display: flex;
+
+  background: white;
+  width: 900px;
+  /* max-width: 75em; */
+  padding: 3em;
+  box-shadow: 0 0 3em rgba(0, 0, 0, .15);
+}
+
+.title {
+  margin: 0 0 .5em;
+  font-weight: 900;
+  color: var(--clr-primary);
+  line-height: .8;
+}
+
+.main-content {
+  width: 70%;
+  flex-shrink: 0;
+}
+
+.sidebar {
+  width: 30%;
+  padding: 2em;
+  margin: 0 0 0 2em;
+  flex-shrink: 0;
+}
+
+.widget {
+  box-shadow: 0 0 .5em rgba(0, 0, 0, .25);
+  padding: 1.5em;
+  text-align: center;
+}
+
+.author__img {
+  border-radius: 50%;
+}
+</style>
