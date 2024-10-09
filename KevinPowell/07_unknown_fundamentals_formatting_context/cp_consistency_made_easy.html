@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Consistency Made Easy</title>
+</head>
+<body>
+  <div>
+    <h1 class="title">consistency made easy</h1>
+    <div class="content flow-content">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora tenetur molestias consequatur, quidem nam ipsum minima aliquid recusandae delectus enim.</p>
+      <p>Totam quod unde illo praesentium aperiam, veniam facere mollitia perferendis eum est illum minima quos qui, quibusdam, corrupti fuga repellat.</p>
+      <div class="flow-content">
+        <p>hello world</p>
+        <p>hello world</p>
+      </div>
+      <p>Mollitia assumenda accusantium cupiditate ipsam, asperiores magnam similique porro, ipsa nemo sunt obcaecati fugit, ex fugiat ab eius repellat illum!</p>
+    </div>
+
+    <div class="content flow-content flex">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora tenetur molestias consequatur, quidem nam ipsum minima aliquid recusandae delectus enim.</p>
+      <p>Totam quod unde illo praesentium aperiam, veniam facere mollitia perferendis eum est illum minima quos qui, quibusdam, corrupti fuga repellat.</p>
+      <p>Mollitia assumenda accusantium cupiditate ipsam, asperiores magnam similique porro, ipsa nemo sunt obcaecati fugit, ex fugiat ab eius repellat illum!</p>
+    </div>
+
+    <div class="content flow-content grid">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora tenetur molestias consequatur, quidem nam ipsum minima aliquid recusandae delectus enim.</p>
+      <p>Totam quod unde illo praesentium aperiam, veniam facere mollitia perferendis eum est illum minima quos qui, quibusdam, corrupti fuga repellat.</p>
+      <p>Mollitia assumenda accusantium cupiditate ipsam, asperiores magnam similique porro, ipsa nemo sunt obcaecati fugit, ex fugiat ab eius repellat illum!</p>
+    </div>
+  </div>
+</body>
+</html>
+
+<style>
+h1,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+/*.flow-content > * {*/
+/*  margin-bottom: 2rem;*/
+/*}*/
+/*.flow-content > *:last-child {*/
+/*  margin-bottom: 0;*/
+/*}*/
+
+/* We can achieve same thing with this, we can use one of them in our reset.css */
+.flow-content > * + * {
+  margin-top: 2rem;
+}
+
+/* * + * is lobotomized owl selector */
+
+.flex {
+  flex-direction: column;
+  display: flex;
+}
+.grid {
+  display: grid;
+}
+
+
+
+:root {
+  --clr-accent-300: #a9f0e2;
+  --clr-accent-400: #0fc5b0;
+  --clr-accent-500: #00937e;
+  --clr-accent-600: #0a4039;
+  --clr-neutral-100: #fff;
+  --clr-neutral-200: #434956;
+  --clr-neutral-300: #272a2e;
+  --clr-neutral-400: #222529;
+  --clr-neutral-500: #1d1e20;
+  --ff-accent: atrament-web,sans-serif;
+  --ff-primary: basic-sans,sans-serif;
+}
+
+body {
+  font-family: basic-sans, sans-serif;
+  min-height: 100vh;
+  font-size: 1.125em;
+  line-height: 1.6;
+  color: var(--clr-neutral-100);
+  background: var(--clr-neutral-500);
+}
+
+h1, h2, h3 {
+  font-family: var(--ff-accent), sans-serif;
+  color: var(--clr-accent-400);
+}
+
+.content {
+  background: var(--clr-neutral-100);
+  color: var(--clr-neutral-500);
+  width: 70vw;
+  padding: 3em;
+  margin: 2rem auto;
+  box-shadow: 0 0 3em rgba(0,0,0,.15);
+}
+
+.title {
+  margin: 2em;
+  text-align: center;
+  font-weight: 900;
+  line-height: .8;
+  font-size: 5rem;
+}
+
+.subtitle {
+  font-size: 3rem;
+}
+</style>
