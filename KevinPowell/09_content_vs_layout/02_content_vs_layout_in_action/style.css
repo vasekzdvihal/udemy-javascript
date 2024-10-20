@@ -32,6 +32,10 @@ p {
   line-height: 1.5;
 }
 
+img {
+  max-width: 100%;
+}
+
 /* general layout */
 section {
   padding: 10rem 0;
@@ -69,6 +73,11 @@ section {
   .split > * + * {
     margin: 0 0 0 var(--spacer);
   }
+}
+
+.bg-dark {
+  background-color: var(--clr-primary-400);
+  color: var(--clr-neutral-100);
 }
 
 /* general styling */
@@ -112,5 +121,9 @@ h3 {
 .card {
   padding: var(--spacer);
   box-shadow: 0 0 1rem rgba(0, 0, 0, .25);
+}
 
+.section-one {
+  background-image: url('img/hero-bg.jpg');
+  background-size: cover;
 }
