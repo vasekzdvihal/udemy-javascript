@@ -47,7 +47,7 @@ p {
 }
 
 ul[class],
-ol[class] {
+lo[class] {
   list-style: none;
   padding: 0;
 }
