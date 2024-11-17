@@ -44,8 +44,48 @@ p {
   line-height: 1.5;
 }
 
+ul[class],
+lo[class] {
+  list-style: none;
+  padding: 0;
+}
+
 img {
   max-width: 100%;
 }
 
 
+/* Utility */
+.text-serif {
+  font-family: var(--ff-serif), sans-serif;
+}
+.font-500 {
+  font-size: var(--fs-500);
+}
+
+.split {
+  display: flex;
+}
+
+h1 {
+  font-family: 'IBM Plex Serif', sans-serif;
+  font-size: 2.125rem;
+}
+body {
+  padding: 0.5rem;
+}
+
+/* Components */
+.primary-header {
+  background-image: url("img/hero.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.container {
+  padding: 2.5rem 1rem;
+}
+
+/**/
