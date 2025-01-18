@@ -84,6 +84,19 @@ h3,
   color: var(--clr-neutral-900);
 }
 
+.article-preview h3 {
+  font-size: var(--fs-500);
+}
+.article-preview .article-info {
+  display: flex;
+  font-weight: var(--fw-400);
+  font-size: var(--fs-200);
+  color: var(--clr-neutral-400);
+}
+.article-preview .article-info > *:first-child {
+  margin-right: 2rem;
+}
+
 /* general layout */
 section {
   padding: 2.5rem 0;
