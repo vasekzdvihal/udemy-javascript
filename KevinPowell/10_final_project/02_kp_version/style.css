@@ -163,8 +163,8 @@ section {
 .call-to-action form {
   margin-top: 3rem; /* You can have utility for margin and padding to not mix layout and content */
   display: flex;
+  flex-direction: column;
   gap: 3rem;
-
 }
 .call-to-action form > div {
   flex-basis: auto;
@@ -192,6 +192,17 @@ section {
 }
 .call-to-action input:focus-visible {
   outline: 1px solid var(--clr-primary-400);
+}
+.call-to-action button {
+  align-self: flex-start;
+}
+@media (min-width: 40em) {
+  .call-to-action form {
+    flex-direction: row;
+  }
+  .call-to-action button {
+    align-self: center;
+  }
 }
 
 a {
