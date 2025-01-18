@@ -102,6 +102,25 @@ h3,
   margin-right: 2rem;
 }
 
+.call-to-action form {
+  margin-top: 3rem; /* You can have utility for margin and padding to not mix layout and content */
+  display: flex;
+  gap: 3rem;
+
+}
+.call-to-action form > div {
+  flex-basis: auto;
+  flex-shrink: 1;
+  flex-grow: 1;
+}
+.call-to-action label {
+  display: block;
+}
+.call-to-action input {
+  width: 100%;
+  border: 0;
+}
+
 /* general layout */
 section {
   padding: 2.5rem 0;
