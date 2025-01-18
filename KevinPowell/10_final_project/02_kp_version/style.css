@@ -68,9 +68,38 @@ h3,
 
 }
 
+/* components */
+.btn {
+  display: inline-block;
+
+  text-decoration: none;
+  color: var(--clr-neutral-900);
+}
+
 /* general layout */
+section {
+  padding: 2.5rem 0;
+}
+
+@media (min-width: 40em) {
+  section {
+    padding: 3.5rem 0;
+  }
+}
+
 .container {
   max-width: 50rem;
-  padding: 3em;
   margin: 0 auto;
+}
+.flow-content > * + * {
+  margin-top: var(--flow-spacer, 1em);
+}
+
+.xl-space {
+  margin-top: 5rem;
+}
+
+/* homepage styles */
+.intro {
+  --flow-spacer: 2em;
 }
