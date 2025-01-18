@@ -47,3 +47,10 @@ body {
   font-size: var(--fs-400);
   padding: 1.5rem;
 }
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}

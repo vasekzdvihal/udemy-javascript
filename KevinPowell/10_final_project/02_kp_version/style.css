@@ -79,9 +79,24 @@ h3,
 /* components */
 .btn {
   display: inline-block;
+  cursor: pointer;
+  border: 0;
+  background: none;
+  font-family: var(--ff-sans), sans-serif;
+  font-weight: var(--fw-700);
+  font-size: var(--fs-300);
 
   text-decoration: none;
   color: var(--clr-neutral-900);
+}
+.btn::after {
+  content: "\203A";
+  margin-left: 1em;
+  font-weight: var(--fw-700);
+}
+.btn:hover,
+.bnt:focus {
+  color: var(--clr-primary-400);
 }
 
 .article-preview h3 {
@@ -115,10 +130,25 @@ h3,
 }
 .call-to-action label {
   display: block;
+  margin-bottom: 0.5em;
+  font-size: var(--fs-300);
+  font-weight: var(--fw-400);
 }
 .call-to-action input {
   width: 100%;
   border: 0;
+  border-bottom: 2px solid var(--clr-neutral-300);
+}
+.call-to-action input::placeholder {
+  color: var(--clr-neutral-300);
+  opacity: 1;
+}
+.call-to-action input:focus {
+  border-color: var(--clr-primary-400);
+  border-width: 4px;
+}
+.call-to-action input:focus-visible {
+  outline: 1px solid var(--clr-primary-400);
 }
 
 /* general layout */
