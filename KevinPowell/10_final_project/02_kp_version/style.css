@@ -279,7 +279,7 @@ a:focus {
 .article-preview a:focus {
   color: inherit;
 }
-.article-preview:hover a::before {
+.article-preview a::before {
   --offset: -.5em;
   content: "";
   position: absolute;
@@ -287,9 +287,14 @@ a:focus {
   bottom: var(--offset);
   left: var(--offset);
   right: var(--offset);
-  z-index: -1;
+  z-index: 1;
   border-radius: var(--br);
-  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+  box-shadow: 0 0.75rem 1.25rem rgba(0,0,0,.15);
+  transition: opacity 350ms ease;
+  opacity: 0;
+}
+.article-preview:hover a::before {
+  opacity: 1;
 }
 .article-preview h3 {
   font-size: var(--fs-500);
