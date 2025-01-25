@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div class="parent">
+  <div class="content">
+    <h1 class="title">Title goes here</h1>
+    <p>Lorem ipsum dolor, <a href="#">sit amet consectetur</a> adipisicing elit. Aliquid sapiente perferendis nulla sed consequuntur eveniet. Itaque veritatis qui labore quia odio nihil, magni soluta facilis necessitatibus cumque repellendus optio laborum.</p>
+  </div>
+  <div class="content">
+    <p>Lorem ipsum dolor, A Itaque veritatis qui labore quia odio nihil, magni soluta facilis necessitatibus cumque repellendus optio laborum.</p>
+  </div>
+  <div class="content">
+    <h1 class="title">Title goes here</h1>
+    <p>Lorem ipsum dolor, <a href="#">sit amet consectetur</a> adipisicing elit. Aliquid sapiente perferendis nulla sed consequuntur eveniet. Itaque veritatis qui labore quia odio nihil, magni soluta facilis necessitatibus cumque repellendus optio laborum.</p>
+  </div>
+</div>
+</body>
+</html>
+
+<style>
+  .parent {
+    margin-top: 3em;
+    display: flex;
+  }
+
+  .content {
+    background: white;
+    margin: 0 1em;
+    padding: 10em 3em;
+    box-shadow: 0 0 3em rgba(0, 0, 0, .15);
+    width: 100%;
+  }
+
+  :root {
+    --clr-primary: #ee6352;
+    --clr-body: #333;
+    --clr-bg: #ddd;
+  }
+
+  body {
+    font-family: basic-sans, sans-serif;
+    min-height: 100vh;
+    font-size: 1.125em;
+    line-height: 1.6;
+    color: var(--clr-body);
+    background: var(--clr-bg);
+  }
+
+  .title {
+    margin: 0 0 .5em;
+    font-weight: 900;
+    color: var(--clr-primary);
+    line-height: .8;
+  }
+</style>
