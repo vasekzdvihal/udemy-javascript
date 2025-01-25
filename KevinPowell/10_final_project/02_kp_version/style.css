@@ -161,10 +161,16 @@ a:focus {
   display: flex;
   flex-direction: column;
 }
+
 .primary-header .container {
   margin-top: auto;
   margin-bottom: auto;
+  width: 100%;
 }
+.primary-header .container > * {
+  max-width: 12ch; /* 12 characters */
+}
+
 .page-home .primary-header {
   background-image: url("img/hero.jpg");
   background-position: center center;
@@ -173,6 +179,7 @@ a:focus {
   background-image: url("img/blog.jpg");
   background-position: left center;
 }
+
 .primary-nav {
   position: fixed;
   bottom: 0.5em;
@@ -212,6 +219,27 @@ a:focus {
     display: flex;
     justify-content: space-between;
   }
+}
+
+.secondary-navigation {
+  display: flex;
+  margin: 2rem 0;
+  align-items: center;
+}
+.secondary-navigation > .btn:last-child {
+  margin-left: auto;
+}
+.categories {
+  margin: 0;
+  display: flex;
+  gap: 1rem;
+}
+.categories button {
+  cursor: pointer;
+  font-size: var(--fs-200);
+  text-transform: uppercase;
+  background: transparent;
+  border: 0;
 }
 
 .article-preview h3 {
