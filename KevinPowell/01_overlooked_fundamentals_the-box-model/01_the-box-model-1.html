@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>What happends when we don't set a width</title>
+</head>
+<body>
+  <div class="example">
+    <div class="content">
+      <h1 class="title">Title goes here</h1>
+      <p>Lorem ipsum dolor, <a href="#">Lorem ipsum dolor.</a> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi ducimus fuga magnam pariatur ratione similique.</p>
+    </div>
+  </div>
+</body>
+</html>
+
+<style>
+.content {
+  border: 30px solid red;
+  padding: 50px;
+  margin-top: 10em;
+  background: white;
+  box-shadow: 0 0 3em rgba(0, 0, 0, .15);
+
+  /* This line causing overflow, due set box sizing (default).  */
+  width: 100%;
+
+  /* This fixes problem. */
+  /* Without this set up, widths is applied in content without padding and border.  */
+  /* So, when i have content 100% (which is 350px from .example) -> 350px + (2*50px) + (2*30px) = 510px in total  */
+  /* In this case we overflowing by 160px due to default border box. Box sizing property set up like this fixes it.   */
+  box-sizing: border-box;
+}
+
+.example {
+  border: 5px solid limegreen;
+  width: 350px;
+}
+
+:root {
+  --clr-primary: #ee6352;
+  --clr-body: #333;
+  --clr-bg: #ddd;
+}
+
+body {
+  font-family: basic-sans, sans-serif;
+  min-height: 100vh;
+  font-size: 1.125em;
+  line-height: 1.6;
+  color: var(--clr-body);
+  background: var(--clr-bg);
+}
+
+.title {
+  margin: 0 0 .5em;
+  font-weight: 900;
+  color: var(--clr-primary);
+  line-height: .8;
+}
+</style>
