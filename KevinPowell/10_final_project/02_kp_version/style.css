@@ -31,26 +31,24 @@
 }
 
 @media (min-width: 40em) {
-  --fs-200: 0.75rem;
-  --fs-300: 1rem;
-  --fs-400: 1.25rem;
-  --fs-500: 1.75rem;
-  --fs-600: 2.125rem;
-  --fs-900: 4.25rem;
+  :root {
+    --fs-500: 1.75rem;
+    --fs-600: 2.125rem;
+    --fs-900: 4.25rem;
+  }
 }
 
 /* background */
 .bg-primary-300 {
   background-color: var(--clr-primary-300);
   border-radius: 1rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
 }
 
 /* typography */
 h1,
 h2,
 h3,
+.section-subtitle,
 .text-serif {
   font-family: var(--ff-serif), serif;
   font-weight: var(--fw-200);
@@ -66,14 +64,18 @@ h3,
 .page-intro {
   font-size: var(--fs-600);
 }
-
+.article-full h3,
 .section-title {
   font-size: var(--fs-600);
   color: var(--clr-neutral-400);
 }
+.article-full h3 + p, /* p must follow h3 (+ symbol)*/
 .section-subtitle {
   font-size: var(--fs-600);
-
+}
+.article-full h3 + p {
+  font-family: var(--ff-serif), serif;
+  margin-top: 0;
 }
 
 /* general layout */
@@ -144,6 +146,7 @@ section {
 
 a {
   font-weight: var(--fw-700);
+  font-size: var(--fs-300);
   color: var(--clr-neutral-900);
 }
 a:hover,
@@ -421,3 +424,10 @@ a:focus {
   grid-column: 1 / -1
  */
 
+/* individual article page*/
+.article-full {
+  --flow-spacer: 2.5em;
+  max-width: 40rem;
+  margin-left: auto;
+  margin-right: auto;
+}
