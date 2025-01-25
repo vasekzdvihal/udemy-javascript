@@ -10,6 +10,8 @@ The repository focuses on frontend technologies such as HTML, CSS, JavaScript, T
 - *A beginner's course to mastering CSS concepts and confidently writing clean, maintainable styles.*
 - **Technologies:**
     - CSS
+- **Completed On:** January 25, 2025
+- **[Certificate](https://courses.kevinpowell.co/certificates/cert_kv9fVEkK)**
 
 ### Typescript: The Complete Developer's Guide
 - https://www.udemy.com/course/typescript-the-complete-developers-guide
