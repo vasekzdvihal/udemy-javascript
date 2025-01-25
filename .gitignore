@@ -14,6 +14,8 @@ dist/
 .idea/udemy-javascript.iml
 .idea/vcs.xml
 .idea/workspace.xml
+.idea/
+.idea\
 
 .cache/
 
