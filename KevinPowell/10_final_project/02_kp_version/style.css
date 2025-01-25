@@ -335,3 +335,39 @@ a:focus {
 .intro {
   --flow-spacer: 2em;
 }
+
+/* blog page styles */
+.article-grid {
+  display: grid;
+  gap: 3em 2em;
+  grid-template-columns: repeat(6, 1fr);
+}
+/*
+  x over y (means starts in x and end in y)
+  grid-column: x / y
+
+  start in x and goes y columns
+  grid-column: x / span y
+
+  goes over y columns
+  grid-column: span y
+
+  since numbering system starts at 1 from left and at same time from -1 from right, this will stretch full-width
+  grid-column: 1 / -1
+ */
+.article-grid > *:first-child {
+  grid-column: 1 / -1;
+}
+.article-grid >  *:nth-child(2),
+.article-grid >  *:nth-child(3) {
+  grid-column: span 3;
+}
+.article-grid >  *:nth-child(4),
+.article-grid >  *:nth-child(5),
+.article-grid >  *:nth-child(6) {
+  grid-column: span 2;
+}
+.article-grid >  *:nth-child(7),
+.article-grid >  *:nth-child(8) {
+  grid-column: span 3;
+}
