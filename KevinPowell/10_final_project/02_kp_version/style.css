@@ -342,6 +342,34 @@ a:focus {
   gap: 3em 2em;
   grid-template-columns: repeat(6, 1fr);
 }
+.article-grid > * {
+  grid-column: 1 / -1;
+}
+@media (min-width: 30em) {
+  .article-grid > *:not(:first-child) {
+    grid-column: span 3;
+  }
+}
+@media (min-width: 40em) {
+
+  .article-grid > *:first-child {
+    grid-column: 1 / -1;
+  }
+  .article-grid >  *:nth-child(2),
+  .article-grid >  *:nth-child(3) {
+    grid-column: span 3;
+  }
+  .article-grid >  *:nth-child(4),
+  .article-grid >  *:nth-child(5),
+  .article-grid >  *:nth-child(6) {
+    grid-column: span 2;
+  }
+  .article-grid >  *:nth-child(7),
+  .article-grid >  *:nth-child(8) {
+    grid-column: span 3;
+  }
+}
+
 /*
   x over y (means starts in x and end in y)
   grid-column: x / y
@@ -355,19 +383,4 @@ a:focus {
   since numbering system starts at 1 from left and at same time from -1 from right, this will stretch full-width
   grid-column: 1 / -1
  */
-.article-grid > *:first-child {
-  grid-column: 1 / -1;
-}
-.article-grid >  *:nth-child(2),
-.article-grid >  *:nth-child(3) {
-  grid-column: span 3;
-}
-.article-grid >  *:nth-child(4),
-.article-grid >  *:nth-child(5),
-.article-grid >  *:nth-child(6) {
-  grid-column: span 2;
-}
-.article-grid >  *:nth-child(7),
-.article-grid >  *:nth-child(8) {
-  grid-column: span 3;
-}
+
