@@ -351,7 +351,6 @@ a:focus {
   }
 }
 @media (min-width: 40em) {
-
   .article-grid > *:first-child {
     grid-column: 1 / -1;
   }
@@ -367,6 +366,23 @@ a:focus {
   .article-grid >  *:nth-child(7),
   .article-grid >  *:nth-child(8) {
     grid-column: span 3;
+  }
+
+  .article-grid > .article-preview:first-child {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr min-content 1fr;
+    gap: 1em;
+  }
+  .article-grid > .article-preview:first-child img {
+    grid-row: span 3;
+    height: 17.5rem;
+  }
+  .article-grid > .article-preview:first-child > h3 {
+    margin-top: auto;
+  }
+  .article-grid > .article-preview:first-child > .info {
+    margin-bottom: auto;
   }
 }
 
