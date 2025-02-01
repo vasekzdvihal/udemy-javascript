@@ -5,10 +5,14 @@ const el = document.getElementById("root");
 
 const root = ReactDOM.createRoot(el!);
 
-class App extends React.Component {
+interface AppProps {
+  color?: string;
+}
+
+class App extends React.Component<AppProps> {
   render() {
-    return <div>Hi there</div>;
+    return <div>Hi there. Color is {this.props.color}</div>;
   }
 }
 
-root.render(<App />);
+root.render(<App color="red" />);
