@@ -1,22 +1,17 @@
-/Youtube/Nightwatch/node_modules/
-
+# Dependencies
 node_modules/
-/Udemy/NodeJS-TheCompleGuide/4_ImproveWorkflowAndDebugging/message.txt
 
+# Build outputs
 dist/
+**/build/
 .parcel-cache/
-.idea/codeStyles/codeStyleConfig.xml
-.idea/git_toolbox_prj.xml
-.idea/inspectionProfiles/Project_Default.xml
-.idea/jsLibraryMappings.xml
-.idea/misc.xml
-.idea/modules.xml
-.idea/udemy-javascript.iml
-.idea/vcs.xml
-.idea/workspace.xml
-.idea/
-.idea\
-
 .cache/
 
+# IDE
+.idea/
+
+# System files
 .DS_Store
+
+# Course specific - TypeScript Complete Guide
+Udemy/TypeScriptCompleteDevelopersGuide/**/build/
