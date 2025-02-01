@@ -1,4 +1,17 @@
-/Youtube/Nightwatch/node_modules/
-
+# Dependencies
 node_modules/
-/Udemy/NodeJS-TheCompleGuide/4_ImproveWorkflowAndDebugging/message.txt
+
+# Build outputs
+dist/
+**/build/
+.parcel-cache/
+.cache/
+
+# IDE
+.idea/
+
+# System files
+.DS_Store
+
+# Course specific - TypeScript Complete Guide
+Udemy/TypeScriptCompleteDevelopersGuide/**/build/
