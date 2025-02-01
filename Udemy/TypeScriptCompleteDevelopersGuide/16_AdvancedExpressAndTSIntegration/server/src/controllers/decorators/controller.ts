@@ -12,10 +12,12 @@ export function controller(routePrefix: string) {
       const path = Reflect.getMetadata(MetadataKeys.path, target.prototype, key);
       const method: Methods = Reflect.getMetadata(MetadataKeys.method, target.prototype, key);
 
+      const middlewares = Reflect.getMetadata(MetadataKeys.middleware, target.prototype, key) || [];
+
       if (path) {
         // Inside router is definition of values that's are possible and TS check if MethodsEnum are valid.
         // So when we add value (like testTest = "testTest"), this will be considered error because there is no testTest in router definition
-        router[method](`${routePrefix}${path}`, routeHandler);
+        router[method](`${routePrefix}${path}`,  ...middlewares, routeHandler);
       }
     });
   }
