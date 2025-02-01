@@ -1,0 +1,56 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4 {
+  line-height: 1.2;
+}
+
+body,
+h1,
+h2,
+h3,
+p,
+dl,
+dt,
+dd,
+figure {
+  margin: 0;
+}
+
+ul[class],
+ol[class] {
+  list-style: none;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--br)
+}
+
+body {
+  line-height: 1.3;
+  font-family: var(--ff-sans), sans-serif;
+  font-size: var(--fs-400);
+  padding: 1.5rem;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}

@@ -1,0 +1,138 @@
+/* Custom properties */
+:root {
+  --spacer: 1rem;
+
+  --clr-neutral-900: #171717;
+  --clr-neutral-700: #333;
+  --clr-neutral-300: #cfcfcf;
+  --clr-neutral-100: #fff;
+  --clr-accent-400: #59e89c;
+  --clr-accent-500: #00986a;
+
+  --ff-primary: "PT Sans", sans-serif;
+
+  --fw-700: 700;
+  --fw-400: 400;
+
+  --box-shadow: 0 0.25em 1.5em rgba(0, 0, 0, 0.15);
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+/* Utility classes */
+.flow-content > * + * {
+  margin-top: 0;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+}
+.container.column {
+  display: flex;
+  flex-direction: column;
+}
+
+/* General styling */
+body {
+  font-family: var(--ff-primary), sans-serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--clr-neutral-900);
+  margin: 0;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+h1 {
+  font-weight: 400;
+}
+h1 span {
+  font-weight: 700;
+}
+h2 {
+  font-size: 2.25rem;
+}
+h3 {
+  font-size: 1.5rem;
+}
+p {
+  font-size: 1.25rem;
+  line-height: 1.75;
+  font-weight: 100;
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-weight: 700;
+  font-size: 1.125rem;
+  padding: 0.75em 1.5em;
+  background-color: var(--clr-accent-400);
+  color: var(--clr-neutral-900);
+}
+
+.container {
+  padding: 8.125rem 9rem;
+}
+
+/* Hero */
+.hero__content {
+  margin-right: 3.125rem;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.hero .image img {
+  max-width: 38vw;
+  box-shadow: var(--box-shadow);
+}
+
+/* Mastering */
+.mastering {
+  background: var(--clr-neutral-900);
+}
+.mastering h2 {
+  color: var(--clr-accent-400);
+}
+.mastering ul {
+  gap: 1.875rem;
+}
+.mastering li {
+  color: var(--clr-neutral-100)
+}
+.mastering li img {
+  max-width: 16rem;
+}
+
+/* Features */
+.features img {
+  background-color: var(--clr-accent-400);
+  box-shadow: var(--box-shadow);
+}
+
+/* CTA */
+.cta {
+  background: url('assets/cta-bg.jpg');
+  color: var(--clr-neutral-100)
+}
+.cta .container {
+  text-align: center;
+}
+.cta .container p {
+   margin: 1.5rem;
+}
