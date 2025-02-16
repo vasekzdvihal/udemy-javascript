@@ -3,6 +3,7 @@ import GuestList from "./state/GuestList";
 import UserSearch from "./state/UserSearch";
 import EventComponent from "./events/EventComponent";
 import Parent from "./props/Parent";
+import UserSearchWithRef from "./refs/UserSearchWithRef";
 
 const el = document.getElementById("root");
 
@@ -18,6 +19,8 @@ const App = () => {
         <UserSearch />
         <hr/>
         <EventComponent />
+        <hr/>
+        <UserSearchWithRef />
     </div>
   );
 };
