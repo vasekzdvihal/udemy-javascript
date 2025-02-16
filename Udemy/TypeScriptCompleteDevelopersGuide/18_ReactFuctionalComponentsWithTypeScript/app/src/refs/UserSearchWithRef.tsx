@@ -1,4 +1,6 @@
-import {useRef, useState} from 'react';
+import {useEffect, useRef, useState} from 'react';
+import {Simulate} from "react-dom/test-utils";
+import input = Simulate.input;
 
 const users = [
     { name: 'Sarah', age: 20 },
@@ -10,6 +12,14 @@ const UserSearchWithRef: React.FC = () => {
     const inputRef = useRef<HTMLInputElement | null>(null);
     const [name, setName] = useState('');
     const [user, setUser] = useState<{ name: string, age: number } | undefined>();
+
+    useEffect(() => {
+        if (!inputRef.current) {
+            return;
+        }
+
+        inputRef.current.focus();
+    }, []);
 
     const onClick = () => {
         const foundUser = users.find((user) => {
