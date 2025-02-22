@@ -7,7 +7,13 @@ interface RepositoriesState {
   data: string[];
 }
 
-const reducer = (state: RepositoriesState, action: Action): RepositoriesState => {
+const initialState = {
+  loading: false,
+  error: null,
+  data: []
+};
+
+const reducer = (state: RepositoriesState = initialState, action: Action): RepositoriesState => {
 
   // if (action.type === 'search_repositories_success') is type guard and inside this if we know for 100% that
   // we're using SearchRepositoriesSuccessAction interface. Same think happened with switch-case, behave like type guard
