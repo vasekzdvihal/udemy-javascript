@@ -4,7 +4,27 @@ interface RepositoriesState {
   data: string[];
 }
 
-const reducer = (state: RepositoriesState, action: any) => {
+interface SearchRepositoriesAction {
+  type: 'search_repositories';
+}
+interface SearchRepositoriesSuccessAction {
+  type: 'search_repositories_success';
+  payload: string[];
+}
+interface SearchRepositoriesErrorAction {
+  type: 'search_repositories_error';
+  payload: string;
+}
+
+const reducer = (
+  state: RepositoriesState,
+  action: SearchRepositoriesAction | SearchRepositoriesSuccessAction | SearchRepositoriesErrorAction
+): RepositoriesState => {
+
+  // if (action.type === 'search_repositories_success') is type guard and inside this if we know for 100% that
+  // we're using SearchRepositoriesSuccessAction interface. Same think happened with switch-case, behave like type guard
+  // so we know (and TS knows) that inside payload is either string[] or string;
+
   switch (action.type) {
     case 'search_repositories':
       return { loading: true, error: null, data: [] }
