@@ -19,6 +19,8 @@ The repository focuses on frontend technologies such as HTML, CSS, JavaScript, T
 - **Technologies:**
     - TypeScript
     - React
+- **Completed On:** February 22, 2025
+- **[Certificate](https://www.udemy.com/certificate/UC-378c693f-bd51-47ba-b7c0-79c616f3c4af)**
 
 ### NodeJS - The Complete Guide (MVC, REST APIs, GraphQL, Deno)
 - https://www.udemy.com/course/nodejs-the-complete-guide
