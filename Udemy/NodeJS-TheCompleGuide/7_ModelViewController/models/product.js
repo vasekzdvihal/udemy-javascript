@@ -1,14 +1,11 @@
 const fs = require('fs');
 const path = require('path');
 
-const products = [];
-
 module.exports = class Product {
   constructor(title) {
     this.title = title;
   }
-
-
+  
   save() {
     const p = path.join(path.dirname(process.mainModule.filename), 'data', 'products.json');
     fs.readFile(p, (err, fileContent) => {
@@ -24,14 +21,14 @@ module.exports = class Product {
     });
   }
 
-  static fetchAll() {
+  static fetchAll(callback) {
     const p = path.join(path.dirname(process.mainModule.filename), 'data', 'products.json');
     fs.readFile(p, (err, fileContent) => {
       if (err) {
-        return []; // We can throw error here, we want just empty array.
+        callback([]); // We can throw error here, we want just empty array.
       }
 
-      return JSON.parse(fileContent.toString());
+      callback(JSON.parse(fileContent.toString()));
     });
   }
 }
