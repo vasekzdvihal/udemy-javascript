@@ -1,20 +1,14 @@
 [
   {
-    "title": "dsaf"
+    "title": "Novy product",
+    "imageUrl": "https://media.licdn.com/dms/image/v2/D4D22AQGPQIq0cZKSvw/feedshare-shrink_2048_1536/B4DZVAO0ETGcAo-/0/1740539384351?e=1743638400&v=beta&t=gvjOHaNvycWh6WnZJeOFzkF2KtISOC5QMGeR4ZQrJL8",
+    "description": "dsfadsf asdf klask.df kjaslkd jalks dflkjals kja",
+    "price": "333"
   },
   {
-    "title": "asdfasdf"
-  },
-  {
-    "title": "asdfa"
-  },
-  {
-    "title": "lalalalalala"
-  },
-  {
-    "title": ""
-  },
-  {
-    "title": "asdf"
+    "title": "novy ratatata",
+    "imageUrl": "https://i.pinimg.com/236x/d7/cc/6b/d7cc6b0abf5b0baaffe3c7224bc0c8cc.jpg",
+    "description": "safsdf ;laskdf ;alsdkf la;sdf; laskl;dfasd fas dfas d",
+    "price": "99.99"
   }
 ]
