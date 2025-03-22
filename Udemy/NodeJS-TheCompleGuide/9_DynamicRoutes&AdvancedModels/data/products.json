@@ -1,1 +1,58 @@
-[{"title":"Hobit","imageUrl":"https://www.publicdomainpictures.net/pictures/10000/velka/1-1210009435EGmE.jpg","description":"lorem lorem lorem","price":"999","id":"0.40166320877441475"},{"title":"Pan Prstenu","imageUrl":"https://www.publicdomainpictures.net/pictures/10000/velka/1-1210009435EGmE.jpg","description":"","price":"2232","id":"781258568"}]
+[
+  {
+    "title": "Hobbit",
+    "imageUrl": "https://mrtns.sk/tovar/_l/138/l138739.jpg?v=17226577022",
+    "description": "The Hobbit, or There and Back Again is a children's fantasy novel by the English author J. R. R. Tolkien. It was published in 1937 to wide critical acclaim, being nominated for the Carnegie Medal and awarded a prize from the New York Herald Tribune for best juvenile fiction.",
+    "price": "99",
+    "id": "189610573"
+  },
+  {
+    "title": "The Lord of the Rings",
+    "imageUrl": "https://cdn.kobo.com/book-images/7a557cb3-f72a-47c3-992b-951c9566e4d4/1200/1200/False/the-fellowship-of-the-ring-the-lord-of-the-rings-book-1-1.jpg",
+    "description": "The Lord of the Rings is an epic high fantasy novel written by English author and scholar J. R. R. Tolkien. Set in Middle-earth, the story began as a sequel to Tolkien's 1937 children's book The Hobbit but eventually developed into a much larger work.",
+    "price": "199",
+    "id": "501209348"
+  },
+  {
+    "title": "The Silmarillion",
+    "imageUrl": "https://www.slovart.cz/buxus/images/image_26677_19_v1.jpeg",
+    "description": "The Silmarillion is a collection of mythopoeic stories by the English writer J. R. R. Tolkien. Edited and published posthumously by his son Christopher Tolkien in 1977, it is a foundational work of the Middle-earth legendarium.",
+    "price": "149",
+    "id": "602314987"
+  },
+  {
+    "title": "Unfinished Tales",
+    "imageUrl": "https://www.knihydobrovsky.cz/thumbs/book-detail/mod_eshop/produkty/549744898/unfinished-tales-of-numenor-and-middle-earth.jpg",
+    "description": "Unfinished Tales is a collection of stories by J.R.R. Tolkien, edited by his son Christopher Tolkien and published posthumously in 1980. It expands on Middle-earth’s history, providing background details for The Lord of the Rings and The Silmarillion.",
+    "price": "129",
+    "id": "815203476"
+  },
+  {
+    "title": "Wyrd Sisters",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/7/74/Wyrd-sisters-cover.jpg/220px-Wyrd-sisters-cover.jpg",
+    "description": "Wyrd Sisters is Terry Pratchett's sixth Discworld novel, published in 1988. It re-introduces Granny Weatherwax of Equal Rites.",
+    "price": "49",
+    "id": "731398410"
+  },
+  {
+    "title": "Reaper Man",
+    "imageUrl": "https://data.knizniklub.cz/book/060/847/0608479/large.jpg",
+    "description": "Reaper Man is a fantasy novel by British writer Terry Pratchett. Published in 1991, it is the 11th Discworld novel and the second to focus on Death. The title is a reference to Alex Cox's movie Repo Man.",
+    "price": "49",
+    "id": "222704905"
+  },
+  {
+    "title": "Guards! Guards!",
+    "imageUrl": "https://www.knihydobrovsky.cz/thumbs/book-detail/mod_eshop/produkty/g/guards-guards-discworld-novel-8-9780552166669.jpg",
+    "description": "Guards! Guards! is the eighth Discworld novel by Terry Pratchett, published in 1989. It is the first book in the City Watch subseries and introduces characters such as Sam Vimes and Carrot Ironfoundersson.",
+    "price": "59",
+    "id": "918475302"
+  },
+  {
+    "title": "Mort",
+    "imageUrl": "https://www.knihydobrovsky.cz/thumbs/book-detail/mod_eshop/produkty/m/mort-discworld-novel-4-9780552166621_25.jpg",
+    "description": "Mort is the fourth Discworld novel by Terry Pratchett, published in 1987. It follows the story of a young man named Mort who becomes Death’s apprentice and struggles with his new responsibilities.",
+    "price": "49",
+    "id": "113248609"
+  }
+]
