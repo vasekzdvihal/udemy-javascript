@@ -1,6 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
+const MAX_ID = 999999999;
+
 const p = path.join(
   path.dirname(process.mainModule.filename),
   'data',
@@ -26,6 +28,7 @@ module.exports = class Product {
   }
 
   save() {
+    this.id = Math.floor(Math.random() * MAX_ID).toString();
     getProductsFromFile(products => {
       products.push(this);
       fs.writeFile(p, JSON.stringify(products), err => {
