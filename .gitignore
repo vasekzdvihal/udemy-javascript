@@ -9,6 +9,7 @@ dist/
 
 # IDE
 .idea/
+.history/
 
 # System files
 .DS_Store
