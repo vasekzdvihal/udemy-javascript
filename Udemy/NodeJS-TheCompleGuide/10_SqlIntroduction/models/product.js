@@ -28,6 +28,6 @@ module.exports = class Product {
   }
 
   static findById(id) {
-     // TODO
+     return db.execute('SELECT * FROM products WHERE id = ?', [id]);
   }
 };
