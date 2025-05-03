@@ -19,6 +19,15 @@ const shopRoutes = require('./routes/shop');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use((req, res, next) => {
+  User.findByPk(1)
+    .then(user => {
+      req.user = user;
+      next();
+    })
+    .catch(err => console.error(err));
+})
+
 app.use('/admin', adminRoutes);
 app.use(shopRoutes);
 
@@ -28,9 +37,23 @@ Product.belongsTo(User, { constraints: true, onDelete: 'CASCADE' });
 User.hasMany(Product);
 
 sequelize
-  .sync({ force: true })
+  //.sync({ force: true })
+  .sync()
   .then(result => {
-    console.log(`Database lodaded, will listen on port 3000!`);
+    console.log(`Database lodaded.`);
+
+    console.log('Looking for default user.')
+    return User.findByPk(1); 
+  })
+  .then(user => {
+    if (!user) {
+      console.log('Creating default user.')
+      return User.create({ name: 'Vasa', email: 'test@test.com' });
+    }
+    return user;
+  }) 
+  .then(user => {
+    console.log('App will listen on port 3000!')
     app.listen(3000);  
   })
   .catch(error => {
