@@ -24,7 +24,7 @@ app.use(errorController.get404);
 
 sequelize.sync()
 .then(result => {
-  console.log(result);
+  console.log(`Database lodaded, will listen on port 3000!`);
   app.listen(3000);  
 }).catch(error => {
   console.log(err);
