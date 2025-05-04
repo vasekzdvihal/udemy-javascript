@@ -48,7 +48,7 @@ Product.belongsToMany(Cart, { through: CartItem });
 
 // APP START
 sequelize
-  // .sync({ force: true })
+  //.sync({ force: true })
   .sync() // Sync DB (create tables, ect...)
   .then(result => { // Try find default user
     console.log(`Database lodaded.`);
@@ -63,10 +63,18 @@ sequelize
     }
     return user;
   }) 
-  .then(user => { // Starting app on port
+  .then((user) => { // Create cart for default user (just one)
+    return user.getCart().then((cart) => {
+      if (!cart) {
+        return user.createCart();
+      }
+      return cart;
+    });
+  })
+  .then(cart => { // Starting app on port
     console.log('App will listen on port 3000!')
-    app.listen(3000);  
+    app.listen(3000); 
   })
   .catch(error => {
-    console.log(err);
+    console.log(error);
   });
