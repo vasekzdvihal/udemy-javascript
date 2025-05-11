@@ -1,15 +1,17 @@
+<script setup>
+import TheNavigation from './components/TheNavigation.vue';
+import { useRoute } from "vue-router";
+
+const route = useRoute();
+</script>
+
 <template>
   <div>
-    <div id="nav">
-      <router-link to="/">Home</router-link>
-      <router-link to="/brazil">Brazil</router-link>
-      <router-link to="/hawaii">Hawaii</router-link>
-      <router-link to="/jamaica">Jamaica</router-link>
-      <router-link to="/panama">Panama</router-link>
-    </div>
+    <TheNavigation></TheNavigation>
 
     <div class="container">
-      <router-view></router-view>
+      <!--:key is from Vue.js - is used for re-render component. We change route so this will destroy and render again whole page. -->
+      <router-view :key="route.path"></router-view>
     </div>
   </div>
 </template>
