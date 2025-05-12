@@ -7,15 +7,16 @@ const destinations = ref(sourceData.destinations);
 
 <template>
     <div id="nav">
-      <router-link to="/">
+      <AppLink to="/">
         <h4>Vue School Travel App</h4>
-      </router-link>
-      <router-link
+      </AppLink>
+      <AppLink
           v-for="destination in destinations"
           :key="destination.id"
           :to="{ name: 'destination.show', params: { id: destination.id, slug: destination.slug }}"
       >
         {{ destination.name }}
-      </router-link>
+      </AppLink>
+      <AppLink :to="{ name: 'protected' }">Dashboard</AppLink>
     </div>
 </template>
