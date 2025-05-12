@@ -9,9 +9,17 @@ const routes = [
     component: Home
   },
   {
+    path: '/home',
+    redirect: '/',
+    // redirect: to => '/'
+  },
+  {
     path: '/protected',
     name: 'protected',
-    component: () => import('@/views/Protected.vue'),
+    components: {
+      default: () => import('@/views/Protected.vue'),
+      LeftSidebar: () => import('@/components/LeftSidebar.vue'),
+    },
     meta: {
       requiresAuth: true
     }
@@ -24,10 +32,20 @@ const routes = [
   {
     path: '/invoices',
     name: 'invoices',
-    component: () => import('@/views/Invoices.vue'),
+    components: {
+      default: () => import('@/views/Invoices.vue'),
+      LeftSidebar: () => import('@/components/LeftSidebar.vue'),
+    },
     meta: {
       requiresAuth: true
     }
+  },
+  {
+    path: '/example/:id(\\d+)',
+    // "id(\\d+)+" - repeating group, but it's required -> example/1/2/3/4/5
+    // "id(\\d+)*" - repeating group, but it's not required -> example/1/2/3/4/5 but also -> example/
+    // "id(\\d+)?" - optional -> example/1 but also -> example/
+    component: () => import('@/views/Login.vue'),
   },
   {
     path: '/destination/:id/:slug',
