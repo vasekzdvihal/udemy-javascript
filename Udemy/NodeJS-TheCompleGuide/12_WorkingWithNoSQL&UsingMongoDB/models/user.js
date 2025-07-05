@@ -8,7 +8,7 @@ class User {
     this.name = username;
     this.email = email;
     this.cart = cart; // {items: []}
-    this.id = _id;
+    this.id = id;
   }
 
   save() {
@@ -19,19 +19,19 @@ class User {
   }
 
   addToCart(product) {
-    const cartProduct = this.cart.items.findIndex(cp => {
-      return cp._id === product._id;
-    });
+    // const cartProduct = this.cart.items.findIndex(cp => {
+    //   return cp._id === product._id;
+    // });
 
     
-    const updatedCart = { items: [{ ...product, quantity: 1 }]};
+    const updatedCart = { items: [{ productId: new ObjectId(product._id), quantity: 1 }]};
     
     const db = getDb();
-    db
+    return db
       .collection('users')
       .updateOne(
-        { _id: new ObjectId(this._id) }, 
-        { $set: { cart: updatedCart }}
+        { _id: new ObjectId(this.id) }, 
+        { $set: { cart: updatedCart }},
       );
   }
 
