@@ -16,3 +16,4 @@ dist/
 
 # Course specific - TypeScript Complete Guide
 Udemy/TypeScriptCompleteDevelopersGuide/**/build/
+/Udemy/NodeJS-TheCompleGuide/12_WorkingWithNoSQL&UsingMongoDB/.env
